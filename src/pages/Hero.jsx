@@ -143,7 +143,7 @@ export default function Hero() {
                             initial={{ scale: 0.8, opacity: 0 }}
                             animate={{ scale: 1, opacity: 1 }}
                             transition={{ delay: 0.6 }}
-                            className="text-5xl font-serif bg-clip-text text-transparent bg-gradient-to-r from-rose-600 to-pink-600"
+                            className="text-5xl italic font-serif bg-clip-text text-transparent bg-gradient-to-r from-rose-600 to-pink-600"
                         >
                             {config.couple.groomName} & {config.couple.brideName}
                         </motion.h2>
@@ -214,7 +214,7 @@ export default function Hero() {
                                     <p className="text-gray-600 font-medium">
                                         Bapak/Ibu/Saudara/i
                                     </p>
-                                    <p className="text-rose-500 font-semibold text-lg">
+                                    <p className="text-rose-500 font-semibold text-2xl">
                                         {guestName ? guestName : "Tamu"}
                                     </p>
                                 </motion.div>

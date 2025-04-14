@@ -17,34 +17,34 @@ const config = {
 
   // Event Details
   event: {
-    date: "2025-07-26",
+    date: "2025-08-10",
     time: "08:00",
     timezone: "WIB",
-    dateTime: "2025-07-26T08:00:00Z", // ISO 8601 format
+    dateTime: "2025-08-10T00:00:00Z", // ISO 8601 format
     name: "Lelados Coffee & Space",
     address: "Jl. Kasatriyan, Gn. Gempal, Giri Peni, Kec. Wates, Kulon Progo",
-    time: "08:00 - 13:00 WIB",
+    time: "08:00 - 12:00 WIB",
     phone: "+62 877 8665 3726",
-    maps_url: "https://maps.app.goo.gl/8pPobSKBzDr7ZzACA",
+    maps_url: "https://maps.app.goo.gl/28XyJo3maAuy7SAC9",
     maps_embed:
-      "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3952.266396366737!2d110.16958657500584!3d-7.867167292154887!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7afb227b5401a9%3A0x918e1249251bce41!2sLelados%20Coffee%20%26%20Space!5e0!3m2!1sen!2sid!4v1738410947469!5m2!1sen!2sid",
+      "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3952.2663962919614!2d110.1721615!3d-7.867167299999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7afb227b5401a9%3A0x918e1249251bce41!2sLelados%20Coffee%20%26%20Space!5e0!3m2!1sen!2sid!4v1744602288519!5m2!1sen!2sid",
     latitude: -7.8671673, // Replace with actual coordinates
-    longitude: 110.1695866, // Replace with actual coordinates
+    longitude: 110.1721615, // Replace with actual coordinates
   },
 
   eventDetails: [
     {
-      title: "Akad Nikah",
-      date: "2025-07-26",
-      startTime: "08:0",
+      title: "Akad Nikah - Rizki & Sekar",
+      date: "2025-08-10",
+      startTime: "08:00",
       endTime: "10:00",
       timeZone: "Asia/Jakarta",
       location: "Lelados Coffee & Space",
       description: "We invite you to join us in celebrating our wedding ceremony.",
     },
     {
-      title: "Resepsi Nikah",
-      date: "2025-07-26",
+      title: "Resepsi Nikah - Rizki & Sekar",
+      date: "2025-08-10",
       startTime: "10:00",
       endTime: "12:00",
       timeZone: "Asia/Jakarta",
@@ -81,6 +81,10 @@ const config = {
   qris: {
     image: "https://ypp.co.id/site/uploads/qris/5f7c6da47a380-qr-code-dana.jpg",
   },
+  supabase: {
+    url: "https://rnckskkhqvxnipafwzfw.supabase.co",
+    key: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJuY2tza2tocXZ4bmlwYWZ3emZ3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDQ2MDM5NDUsImV4cCI6MjA2MDE3OTk0NX0.8khGIPF81qUmNaJJHjFtN99rpzsqSHcii9DueT0tPsM"
+  }
 };
 
 export default config;

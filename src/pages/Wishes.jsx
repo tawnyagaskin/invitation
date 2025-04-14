@@ -13,8 +13,9 @@ import {
     XCircle,
     HelpCircle,
 } from 'lucide-react'
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { formatEventDate } from '@/lib/formatEventDate';
+import { supabase } from '@/lib/supabase';
 
 export default function Wishes() {
     const [showConfetti, setShowConfetti] = useState(false);
@@ -22,59 +23,54 @@ export default function Wishes() {
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [attendance, setAttendance] = useState('');
     const [isOpen, setIsOpen] = useState(false);
+    const [name, setName] = useState('');
+    const [wishes, setWishes] = useState([]);
 
     const options = [
         { value: 'attending', label: 'Yes, I will attend' },
         { value: 'not-attending', label: 'No, I cannot attend' },
         { value: 'maybe', label: 'Maybe, I will confirm later' }
     ];
-    // Example wishes - replace with your actual data
-    const [wishes, setWishes] = useState([
-        {
-            id: 1,
-            name: "John Doe",
-            message: "Wishing you both a lifetime of love, laughter, and happiness! 🎉",
-            timestamp: "2024-12-24T23:20:00Z",
-            attending: "attending"
-        },
-        {
-            id: 2,
-            name: "Natalie",
-            message: "Wishing you both a lifetime of love, laughter, and happiness! 🎉",
-            timestamp: "2024-12-24T23:20:00Z",
-            attending: "attending"
-        },
-        {
-            id: 3,
-            name: "mrofisr",
-            message: "Congratulations on your special day! May Allah bless your union! 🤲",
-            timestamp: "2024-12-25T23:08:09Z",
-            attending: "maybe"
-        }
-
-    ]);
 
     const handleSubmitWish = async (e) => {
         e.preventDefault();
-        if (!newWish.trim()) return;
 
         setIsSubmitting(true);
-        // Simulating API call
-        await new Promise(resolve => setTimeout(resolve, 1000));
 
-        const newWishObj = {
-            id: wishes.length + 1,
-            name: "Guest", // Replace with actual user name
+        const { data, error } = await supabase
+        .from('wishes')
+        .insert([
+          {
+            name: name,
             message: newWish,
-            attend: "attending",
-            timestamp: new Date().toISOString()
-        };
+            attendance: attendance,
+             timestamp: new Date().toISOString(),
+           },
+         ])
+         .select();
 
-        setWishes(prev => [newWishObj, ...prev]);
-        setNewWish('');
-        setIsSubmitting(false);
-        setShowConfetti(true);
-        setTimeout(() => setShowConfetti(false), 3000);
+        if (error) {
+            console.error('Insert error:', error);
+            setIsSubmitting(false);
+            return;
+        }
+
+
+      const newWishObj = {
+         id: data[0].id,
+         name: name,
+         message: newWish,
+         attendance: attendance,
+         timestamp: new Date().toISOString(),
+       };
+     
+       setWishes(prev => [newWishObj, ...prev]);
+       setName('');
+       setNewWish('');
+       setAttendance('');
+       setIsSubmitting(false);
+       setShowConfetti(true);
+       setTimeout(() => setShowConfetti(false), 5000);
     };
     const getAttendanceIcon = (status) => {
         switch (status) {
@@ -88,6 +84,25 @@ export default function Wishes() {
                 return null;
         }
     };
+
+    useEffect(() => {
+        const fetchWishes = async () => {
+          const { data, error } = await supabase
+            .from('wishes')
+            .select('*')
+            .order('timestamp', { ascending: false });
+      
+          if (error) {
+            console.error('Fetch error:', error);
+          } else {
+            setWishes(data);
+          }
+        };
+      
+        fetchWishes();
+      }, []);
+
+
     return (<>
         <section id="wishes" className="min-h-screen relative overflow-hidden">
             {showConfetti && <Confetti recycle={false} numberOfPieces={200} />}
@@ -171,7 +186,7 @@ export default function Wishes() {
                                                     <h4 className="font-medium text-gray-800 text-sm truncate">
                                                         {wish.name}
                                                     </h4>
-                                                    {getAttendanceIcon(wish.attending)}
+                                                    {getAttendanceIcon(wish.attendance)}
                                                 </div>
                                                 <div className="flex items-center space-x-1 text-gray-500 text-xs">
                                                     <Clock className="w-3 h-3" />
@@ -222,6 +237,8 @@ export default function Wishes() {
                                         placeholder="Masukan nama kamu..."
                                         className="w-full px-4 py-2.5 rounded-xl bg-white/50 border border-rose-100 focus:border-rose-300 focus:ring focus:ring-rose-200 focus:ring-opacity-50 transition-all duration-200 text-gray-700 placeholder-gray-400"
                                         required
+                                        value={name}
+                                        onChange={(e) => setName(e.target.value)}
                                     />
                                 </div>
                                 <motion.div
@@ -293,6 +310,8 @@ export default function Wishes() {
                                         placeholder="Kirimkan harapan dan doa untuk kedua mempelai..."
                                         className="w-full h-32 p-4 rounded-xl bg-white/50 border border-rose-100 focus:border-rose-300 focus:ring focus:ring-rose-200 focus:ring-opacity-50 resize-none transition-all duration-200"
                                         required
+                                        value={newWish}
+                                        onChange={(e) => setNewWish(e.target.value)}
                                     />
                                 </div>
                             </div>
@@ -310,7 +329,7 @@ export default function Wishes() {
                                             : 'bg-rose-500 hover:bg-rose-600'}`}
                                 >
                                     <Send className="w-4 h-4" />
-                                    <span>{isSubmitting ? 'Sedang Mengirim...' : 'Kirimkan Doa'}</span>
+                                    <span>{isSubmitting ? 'Mengirim...' : 'Kirimkan Doa'}</span>
                                 </motion.button>
                             </div>
                         </div>

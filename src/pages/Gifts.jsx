@@ -4,9 +4,9 @@ import { Copy, Gift, CreditCard, CheckCircle, Wallet, Building2, MapPin } from "
 import { useState } from "react";
 export default function Gifts() {
   const [copiedAccount, setCopiedAccount] = useState(null);
-  const copyToClipboard = (text, bank) => {
+  const copyToClipboard = (text) => {
     navigator.clipboard.writeText(text);
-    setCopiedAccount(bank);
+    setCopiedAccount(text);
     setTimeout(() => setCopiedAccount(null), 2000);
   };
   return (
@@ -123,15 +123,15 @@ export default function Gifts() {
                       <motion.button
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
-                        onClick={() => copyToClipboard(account.accountNumber, account.bank)}
+                        onClick={() => copyToClipboard(account.accountNumber)}
                         className="flex items-center space-x-1 text-rose-500 hover:text-rose-600"
                       >
-                        {copiedAccount === account.bank ? (
+                        {copiedAccount === account.accountNumber ? (
                           <CheckCircle className="w-4 h-4" />
                         ) : (
                           <Copy className="w-4 h-4" />
                         )}
-                        <span className="text-sm">{copiedAccount === account.bank ? "Copied!" : "Copy"}</span>
+                        <span className="text-sm">{copiedAccount === account.accountNumber ? "Copied!" : "Copy"}</span>
                       </motion.button>
                     </div>
                   </div>
@@ -153,8 +153,11 @@ export default function Gifts() {
                 <p className="py-2 text-xs text-muted-foreground">Anda dapat mengirimkan kado dengan alamat berikut:</p>
                 <div className="flex items-start space-x-4">
                   <MapPin className="w-5 h-5 mt-1 text-rose-500" />
-                  <p className="flex-1 text-gray-600">{config.meta.address}</p>
-                </div>
+                  <div className="flex-col items-start">
+                     <p className="flex-1 text-gray-800">{config.event.name}</p>
+                     <p className="flex-1 text-gray-600 text-sm"> {config.meta.address}</p>
+                   </div>
+              </div>
               </div>
               {/* <p className="text-sm text-gray-500">Pindai untuk Mengirimkan Hadiah via Dompet Digital</p> */}
             </div>
