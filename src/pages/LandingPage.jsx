@@ -1,10 +1,31 @@
 // src/pages/LandingPage.jsx
 import config from '@/config/config';
-import { formatEventDate } from '@/lib/formatEventDate';
+import { safeBase64 } from '@/lib/base64';
+import { formatDate } from '@/lib/formatEventDate';
 import { motion } from 'framer-motion';
 import { Calendar, Clock } from 'lucide-react';
+import { useEffect, useState } from 'react';
 
-const LandingPage = ({ onOpenInvitation }) => (
+const LandingPage = ({ onOpenInvitation }) => {
+  const [guestName, setGuestName] = useState('');
+  
+  useEffect(() => {
+      // Get guest parameter from URL
+      const urlParams = new URLSearchParams(window.location.search);
+      const guestParam = urlParams.get('guest');
+
+      if (guestParam) {
+          try {
+              const decodedName = safeBase64.decode(guestParam);
+              setGuestName(decodedName);
+          } catch (error) {
+              console.error('Error decoding guest name:', error);
+              setGuestName('');
+          }
+      }
+  }, []);
+  
+  return (
   <motion.div
     initial={{ opacity: 0 }}
     animate={{ opacity: 1 }}
@@ -44,7 +65,7 @@ const LandingPage = ({ onOpenInvitation }) => (
             <div className="inline-flex flex-col items-center space-y-1 bg-white/80 px-6 py-3 rounded-xl">
               <Calendar className="w-5 h-5 text-rose-400" />
               <p className="text-gray-700 font-medium">
-                {formatEventDate(config.event.dateTime)}
+                {formatDate(config.event.dateTime)}
               </p>
             </div>
 
@@ -64,13 +85,30 @@ const LandingPage = ({ onOpenInvitation }) => (
             className="text-center space-y-6"
           >
             <div className="space-y-2">
-              <h1 className="text-4xl md:text-5xl font-serif text-gray-800 leading-tight">
+              <h1 className="text-4xl italic md:text-5xl font-serif text-gray-800 leading-tight">
                 {config.couple.groomName}
                 <span className="text-rose-400 mx-3">&</span>
                 {config.couple.brideName}
               </h1>
               <div className="h-px w-24 mx-auto bg-rose-200" />
             </div>
+          </motion.div>
+
+          <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 1.1 }}
+              className="space-y-2 text-center mt-5"
+          >
+              <p className="text-gray-500 font-serif italic">
+                  Kepada Yth.
+              </p>
+              <p className="text-gray-600 font-medium text-xs">
+                  Bapak/Ibu/Saudara/i
+              </p>
+              <p className="text-rose-500 font-semibold text-2xl italic">
+                  {guestName ? guestName : "Tamu"}
+              </p>
           </motion.div>
 
           {/* Open Invitation Button */}
@@ -102,6 +140,6 @@ const LandingPage = ({ onOpenInvitation }) => (
       </motion.div>
     </div>
   </motion.div>
-);
+)};
 
 export default LandingPage;

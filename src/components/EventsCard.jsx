@@ -11,7 +11,7 @@ import {
   Apple,
   Calendar as CalendarIcon
 } from 'lucide-react';
-import { formatEventDate } from '@/lib/formatEventDate';
+import { formatDate } from '@/lib/formatEventDate';
 
 const Modal = ({ isOpen, onClose, children }) => {
   return (
@@ -70,7 +70,7 @@ const SingleEventCard = ({ eventData }) => {
         console.error("Invalid date detected:", date);
         return "";
       }
-      
+
       return date.toISOString().replace(/-|:|\.\d+/g, '');
     };
 
@@ -136,7 +136,7 @@ END:VCALENDAR`;
         <div className="space-y-3 text-gray-600">
           <div className="flex items-center space-x-3">
             <Calendar className="w-5 h-5 text-rose-500" />
-            <span>{formatEventDate(eventData.date)}</span>
+            <span>{formatDate(eventData.date)}</span>
           </div>
           <div className="flex items-center space-x-3">
             <Clock className="w-5 h-5 text-rose-500" />

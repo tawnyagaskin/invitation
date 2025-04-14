@@ -2,7 +2,7 @@ import { Calendar, Clock, Heart } from 'lucide-react'
 import { motion } from 'framer-motion'
 import { useEffect, useState } from 'react';
 import config from '@/config/config';
-import { formatEventDate } from '@/lib/formatEventDate';
+import { formatDate } from '@/lib/formatEventDate';
 import { safeBase64 } from '@/lib/base64';
 
 export default function Hero() {
@@ -117,17 +117,6 @@ export default function Hero() {
                     transition={{ duration: 0.8 }}
                     className="space-y-6 relative z-10"
                 >
-                    {/* Special Date Badge */}
-                    <motion.div
-                        initial={{ scale: 0 }}
-                        animate={{ scale: 1 }}
-                        transition={{ delay: 0.2 }}
-                        className="inline-block mx-auto"
-                    >
-                        <span className="px-4 py-1 text-sm bg-rose-50 text-rose-600 rounded-full border border-rose-200">
-                            Catat Tanggal Penting Ini
-                        </span>
-                    </motion.div>
 
                     {/* Date Display */}
                     <div className="space-y-4">
@@ -137,16 +126,48 @@ export default function Hero() {
                             transition={{ delay: 0.4 }}
                             className="text-gray-500 font-light italic"
                         >
-                            InsyaAllah Kami Akan Menikah
+                            Undangan Pernikahan
                         </motion.p>
+                        <motion.h2
+                            initial={{ scale: 0.8, opacity: 0 }}
+                            animate={{ scale: 1, opacity: 1 }}
+                            transition={{ delay: 0.6 }}
+                            className="text-4xl italic font-serif bg-clip-text text-transparent bg-gradient-to-r from-rose-600 to-pink-600"
+                        >
+                            {config.couple.groomName_full}
+                        </motion.h2>
+                        <motion.span
+                            initial={{ scale: 0.8, opacity: 0 }}
+                            animate={{ scale: 1, opacity: 1 }}
+                            transition={{ delay: 0.6 }}
+                            className="text-sm italic font-serif bg-clip-text text-transparent bg-gradient-to-r from-rose-600 to-pink-600"
+                        >
+                            Putra dari {config.couple.groomName_parents}
+                        </motion.span>
                         <motion.h2
                             initial={{ scale: 0.8, opacity: 0 }}
                             animate={{ scale: 1, opacity: 1 }}
                             transition={{ delay: 0.6 }}
                             className="text-5xl italic font-serif bg-clip-text text-transparent bg-gradient-to-r from-rose-600 to-pink-600"
                         >
-                            {config.couple.groomName} & {config.couple.brideName}
+                            &
                         </motion.h2>
+                        <motion.h2
+                            initial={{ scale: 0.8, opacity: 0 }}
+                            animate={{ scale: 1, opacity: 1 }}
+                            transition={{ delay: 0.6 }}
+                            className="text-4xl italic font-serif bg-clip-text text-transparent bg-gradient-to-r from-rose-600 to-pink-600"
+                        >
+                            {config.couple.brideName_full}
+                        </motion.h2>
+                        <motion.span
+                            initial={{ scale: 0.8, opacity: 0 }}
+                            animate={{ scale: 1, opacity: 1 }}
+                            transition={{ delay: 0.6 }}
+                            className="text-sm italic font-serif bg-clip-text text-transparent bg-gradient-to-r from-rose-600 to-pink-600"
+                        >
+                            Putri dari {config.couple.brideName_parents}
+                        </motion.span>
                     </div>
 
                     {/* Time and Date Info */}
@@ -177,7 +198,7 @@ export default function Hero() {
                                     >
                                         <Calendar className="w-4 h-4 text-rose-400" />
                                         <span className="text-gray-700 font-medium">
-                                            {formatEventDate(config.event.dateTime, "full")}
+                                            {formatDate(config.event.dateTime)}
                                         </span>
                                     </motion.div>
 

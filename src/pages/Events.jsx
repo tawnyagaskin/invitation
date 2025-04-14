@@ -25,14 +25,6 @@ export default function Events() {
                     transition={{ duration: 0.8 }}
                     className="text-center space-y-4 mb-16"
                 >
-                    <motion.span
-                        initial={{ opacity: 0, y: 10 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.2 }}
-                        className="inline-block text-rose-500 font-medium mb-2"
-                    >
-                        Catat Tanggal Penting Ini
-                    </motion.span>
 
                     <motion.h2
                         initial={{ opacity: 0, y: 20 }}
@@ -49,7 +41,7 @@ export default function Events() {
                         transition={{ delay: 0.4 }}
                         className="text-gray-500 max-w-md mx-auto"
                     >
-                        Kami Mengundang Anda untuk Merayakan Hari Istimewa Sebagai Awal Perjalanan Cinta Kami
+                        Kami bermaksud untuk mengundang saudara/i dalam acara pernikahan kami
                     </motion.p>
 
                     {/* Decorative Line */}

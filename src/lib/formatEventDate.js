@@ -1,3 +1,6 @@
+import { format, parseISO } from 'date-fns'
+import { id } from 'date-fns/locale'
+
 export const formatEventDate = (isoString, format = 'full') => {
     const date = new Date(isoString);
 
@@ -77,3 +80,10 @@ export const formatEventDate = (isoString, format = 'full') => {
 
     return formatted;
 };
+
+export const formatDate = (dateString) => {
+    if (!dateString) return ''
+
+    const date = parseISO(dateString)
+    return format(date, 'EEEE, d MMMM yyyy', { locale: id })
+}

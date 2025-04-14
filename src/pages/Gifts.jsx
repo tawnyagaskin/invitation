@@ -31,16 +31,16 @@ export default function Gifts() {
               transition={{ delay: 0.2 }}
               className="inline-block font-medium text-rose-500"
             >
-              Hadiah Pernikahan
+              Kado
             </motion.span>
 
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3 }}
-              className="font-serif text-4xl text-gray-800 md:text-2xl"
+              className="font-serif text-sm text-gray-500 md:text-2xl"
             >
-              Berikan Hadiah
+              Kehadiran dan doa restu merupakan karunia yang sangat berarti bagi kami. Namun, jika ingin berbagi kebahagiaan melalui tanda kasih, berikut detailnya:
             </motion.h2>
 
             {/* Decorative Divider */}
@@ -72,14 +72,14 @@ export default function Gifts() {
               </p> */}
 
               {/* Arabic Dua */}
-              <div className="space-y-2">
+              {/* <div className="space-y-2">
                 <p className="text-lg text-gray-800 font-arabic">جزاكم الله خيرا وبارك الله فيكم</p>
                 <p className="text-sm italic text-gray-600">Jazakumullahu khairan, Barakallah fiikum</p>
-              </div>
+              </div> */}
             </motion.div>
 
             {/* Optional: Additional Decorative Element */}
-            <motion.div
+            {/* <motion.div
               initial={{ scale: 0 }}
               whileInView={{ scale: 1 }}
               transition={{ delay: 0.6 }}
@@ -88,7 +88,7 @@ export default function Gifts() {
               <div className="w-8 h-px bg-rose-200/50" />
               <div className="w-1.5 h-1.5 rounded-full bg-rose-300" />
               <div className="w-8 h-px bg-rose-200/50" />
-            </motion.div>
+            </motion.div> */}
           </motion.div>
 
           {/* Bank Accounts Grid */}

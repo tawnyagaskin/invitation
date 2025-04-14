@@ -1,7 +1,7 @@
 import config from "@/config/config";
 import { Clock, Navigation as NavigationIcon, MapPin, CalendarCheck, Phone, ExternalLink } from "lucide-react";
 import { motion } from "framer-motion";
-import { formatEventDate } from "@/lib/formatEventDate";
+import { formatDate } from "@/lib/formatEventDate";
 
 export default function Location() {
   return (
@@ -95,7 +95,7 @@ export default function Location() {
 
                   <div className="flex items-center space-x-4">
                     <CalendarCheck className="w-5 h-5 text-rose-500" />
-                    <p className="text-gray-600">{formatEventDate(config.event.dateTime)}</p>
+                    <p className="text-gray-600">{formatDate(config.event.dateTime)}</p>
                   </div>
 
                   <div className="flex items-center space-x-4">
@@ -138,11 +138,10 @@ export default function Location() {
               </div>
 
               {/* Additional Info */}
-              <div className="p-4 border bg-rose-50/50 rounded-xl border-rose-100">
+              {/* <div className="p-4 border bg-rose-50/50 rounded-xl border-rose-100">
                 <p className="text-sm text-rose-600">
-                  <span className="font-medium">Note:</span> Free parking is available for all guests
                 </p>
-              </div>
+              </div> */}
             </motion.div>
           </div>
         </div>

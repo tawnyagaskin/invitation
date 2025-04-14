@@ -12,7 +12,11 @@ const config = {
 
   couple: {
     groomName: "Rizki",
+    groomName_full: "Rizki Nurpadilah",
+    groomName_parents: "Bapak Fathul Qorib & Ibu Nurhayati",
     brideName: "Sekar",
+    brideName_full: "Sekar Septi Ardiyati",
+    brideName_parents: "Bapak Suparjo & Ibu Sri Riyadiyati",
   },
 
   // Event Details
@@ -55,8 +59,8 @@ const config = {
 
   audio: {
     src: "/audio/backsound.mp3",
-    title: "Fulfilling Humming",
-    artist: "Nasheed",
+    title: "Can't Help Falling in Love",
+    artist: "Ed Sheeran",
     autoplay: true,
     loop: true,
     toastDuration: 5000,
