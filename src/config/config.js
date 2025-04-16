@@ -15,7 +15,7 @@ const config = {
     groomName_full: "Sekar Septi Ardiyati",
     groomName_parents: "Bapak Suparjo & Ibu Sri Riyadiyati",
     brideName: "Rizki",
-    brideName_full: "Rizki Nurpadila",
+    brideName_full: "Rizki Nurpadilah",
     brideName_parents: "Bapak Fathul Qorib & Ibu Nurhayati",
   },
 

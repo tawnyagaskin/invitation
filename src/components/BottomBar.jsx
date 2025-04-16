@@ -18,7 +18,6 @@ const menuItems = [
   { icon: Gift, label: '', href: '#gifts' },
   { icon: BookHeart, label: '', href: '#gallery' },
   { icon: MessageCircleHeart, label: '', href: '#wishes' },
-  { icon: Image, label: '', href: '#gallery' }
 ];
 
 const BottomBar = () => {
