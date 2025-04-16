@@ -29,7 +29,7 @@ export default function Gifts() {
               initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
-              className="inline-block font-medium text-rose-500"
+              className="inline-block font-medium text-rose-500 text-4xl"
             >
               Kado
             </motion.span>
@@ -38,7 +38,7 @@ export default function Gifts() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3 }}
-              className="font-serif text-sm text-gray-500 md:text-2xl"
+              className="font-serif text-sm text-gray-500 "
             >
               Kehadiran dan doa restu merupakan karunia yang sangat berarti bagi kami. Namun, jika ingin berbagi kebahagiaan melalui tanda kasih, berikut detailnya:
             </motion.h2>
@@ -154,10 +154,10 @@ export default function Gifts() {
                 <div className="flex items-start space-x-4">
                   <MapPin className="w-5 h-5 mt-1 text-rose-500" />
                   <div className="flex-col items-start">
-                     <p className="flex-1 text-gray-800">{config.event.name}</p>
-                     <p className="flex-1 text-gray-600 text-sm"> {config.meta.address}</p>
-                   </div>
-              </div>
+                    <p className="flex-1 text-gray-800">{config.event.name}</p>
+                    <p className="flex-1 text-gray-600 text-sm"> {config.meta.address}</p>
+                  </div>
+                </div>
               </div>
               {/* <p className="text-sm text-gray-500">Pindai untuk Mengirimkan Hadiah via Dompet Digital</p> */}
             </div>
