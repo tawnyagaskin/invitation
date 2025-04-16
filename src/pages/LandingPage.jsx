@@ -34,8 +34,8 @@ const LandingPage = ({ onOpenInvitation }) => {
       style={{ backgroundImage: "url('/images/cover.jpg')" }}
     >
     {/* Decorative Background */}
-    <div className="absolute inset-0 bg-gradient-to-b from-white via-rose-50/30 to-white" />
-    <div className="absolute top-0 right-0 w-96 h-96 bg-rose-100/20 rounded-full blur-3xl translate-x-1/2 -translate-y-1/2" />
+      <div className="absolute inset-0 bg-gradient-to-b from-white via-sky-50/30 to-white" />
+      <div className="absolute top-0 right-0 w-96 h-96 bg-sky-100/20 rounded-full blur-3xl translate-x-1/2 -translate-y-1/2" />
     <div className="absolute bottom-0 left-0 w-96 h-96 bg-pink-100/20 rounded-full blur-3xl -translate-x-1/2 translate-y-1/2" />
 
     {/* Main Content */}
@@ -47,12 +47,12 @@ const LandingPage = ({ onOpenInvitation }) => {
         className="max-w-md w-full"
       >
         {/* Card Container */}
-        <div className="backdrop-blur-sm bg-white/50 p-8 md:p-10 rounded-2xl border border-rose-100/50 shadow-xl">
+          <div className="backdrop-blur-sm bg-white/50 p-8 md:p-10 rounded-2xl border border-sky-100/50 shadow-xl">
           {/* Top Decorative Line */}
           <div className="flex items-center justify-center gap-3 mb-8">
-            <div className="h-px w-16 bg-rose-200/50" />
-            <div className="w-2 h-2 rounded-full bg-rose-300" />
-            <div className="h-px w-16 bg-rose-200/50" />
+              <div className="h-px w-16 bg-sky-200/50" />
+              <div className="w-2 h-2 rounded-full bg-sky-300" />
+              <div className="h-px w-16 bg-sky-200/50" />
           </div>
 
           {/* Date and Time */}
@@ -64,14 +64,14 @@ const LandingPage = ({ onOpenInvitation }) => {
             className="flex flex-col gap-4 mb-8 items-center"
           >
               <div className="inline-flex flex-col items-center space-y-1  px-6 py-3 rounded-xl">
-              <Calendar className="w-5 h-5 text-rose-400" />
+                <Calendar className="w-5 h-5 text-sky-400" />
               <p className="text-gray-700 font-medium">
                 {formatDate(config.event.dateTime)}
               </p>
             </div>
 
               <div className="inline-flex flex-col items-center space-y-1  px-6 py-3 rounded-xl">
-              <Clock className="w-5 h-5 text-rose-400" />
+                <Clock className="w-5 h-5 text-sky-400" />
               <p className="text-gray-700 font-medium">
                 {config.event.time}
               </p>
@@ -88,10 +88,10 @@ const LandingPage = ({ onOpenInvitation }) => {
             <div className="space-y-2">
               <h1 className="text-4xl italic md:text-5xl font-serif text-gray-800 leading-tight">
                 {config.couple.groomName}
-                <span className="text-rose-400 mx-3">&</span>
+                  <span className="text-sky-400 mx-3">&</span>
                 {config.couple.brideName}
               </h1>
-              <div className="h-px w-24 mx-auto bg-rose-200" />
+                <div className="h-px w-24 mx-auto bg-sky-200" />
             </div>
           </motion.div>
 
@@ -107,7 +107,7 @@ const LandingPage = ({ onOpenInvitation }) => {
               <p className="text-gray-600 font-medium text-xs">
                   Bapak/Ibu/Saudara/i
               </p>
-              <p className="text-rose-500 font-semibold text-2xl italic">
+              <p className="text-sky-500 font-semibold text-2xl italic">
                   {guestName ? guestName : "Tamu"}
               </p>
           </motion.div>
@@ -123,7 +123,7 @@ const LandingPage = ({ onOpenInvitation }) => {
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
               onClick={onOpenInvitation}
-              className="group relative w-full bg-rose-500 text-white px-8 py-3 rounded-xl font-medium shadow-lg hover:bg-rose-600 transition-all duration-200"
+                className="group relative w-full bg-sky-500 text-white px-8 py-3 rounded-xl font-medium shadow-lg hover:bg-sky-600 transition-all duration-200"
             >
               <span className="relative z-10 flex items-center justify-center gap-2">
                 <span>Buka Undangan</span>
@@ -134,7 +134,7 @@ const LandingPage = ({ onOpenInvitation }) => {
                   →
                 </motion.span>
               </span>
-              <div className="absolute inset-0 bg-gradient-to-r from-rose-600 to-rose-500 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
+                <div className="absolute inset-0 bg-gradient-to-r from-sky-600 to-sky-500 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
             </motion.button>
           </motion.div>
         </div>

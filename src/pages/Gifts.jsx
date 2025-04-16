@@ -13,8 +13,8 @@ export default function Gifts() {
     <>
       <section id="gifts" className="relative min-h-screen overflow-hidden">
         {/* Decorative Background */}
-        <div className="absolute inset-0 bg-gradient-to-b from-white via-rose-50/30 to-white" />
-        <div className="absolute top-0 right-0 translate-x-1/2 -translate-y-1/2 rounded-full w-96 h-96 bg-rose-100/20 blur-3xl" />
+        <div className="absolute inset-0 bg-gradient-to-b from-white via-sky-50/30 to-white" />
+        <div className="absolute top-0 right-0 translate-x-1/2 -translate-y-1/2 rounded-full w-96 h-96 bg-sky-100/20 blur-3xl" />
         <div className="absolute bottom-0 left-0 -translate-x-1/2 translate-y-1/2 rounded-full w-96 h-96 bg-pink-100/20 blur-3xl" />
 
         <div className="container relative z-10 px-4 py-20 mx-auto">
@@ -29,7 +29,7 @@ export default function Gifts() {
               initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
-              className="inline-block font-medium text-rose-500 text-4xl"
+              className="inline-block font-medium text-sky-500 text-4xl"
             >
               Kado
             </motion.span>
@@ -50,9 +50,9 @@ export default function Gifts() {
               transition={{ delay: 0.4 }}
               className="flex items-center justify-center gap-4 pt-4"
             >
-              <div className="h-[1px] w-12 bg-rose-200" />
-              <Gift className="w-5 h-5 text-rose-400" />
-              <div className="h-[1px] w-12 bg-rose-200" />
+              <div className="h-[1px] w-12 bg-sky-200" />
+              <Gift className="w-5 h-5 text-sky-400" />
+              <div className="h-[1px] w-12 bg-sky-200" />
             </motion.div>
 
             {/* Message Container */}
@@ -78,12 +78,12 @@ export default function Gifts() {
                 transition={{ delay: 0.2 * index }}
                 className="relative group"
               >
-                <div className="absolute inset-0 transition-transform duration-300 transform bg-gradient-to-r from-rose-100/50 to-pink-100/50 rounded-2xl group-hover:scale-105" />
-                <div className="relative p-6 border shadow-lg backdrop-blur-sm bg-white/80 rounded-2xl border-rose-100/50">
+                <div className="absolute inset-0 transition-transform duration-300 transform bg-gradient-to-r from-sky-100/50 to-pink-100/50 rounded-2xl group-hover:scale-105" />
+                <div className="relative p-6 border shadow-lg backdrop-blur-sm bg-white/80 rounded-2xl border-sky-100/50">
                   <div className="flex items-center justify-between">
                     <div className="flex items-center space-x-4">
                       <div className="w-12 h-12 p-2 bg-white rounded-lg shadow-sm">
-                        {/* <Building2 className="w-full h-full text-rose-500" /> */}
+                        {/* <Building2 className="w-full h-full text-sky-500" /> */}
                         <img src={account.logo} alt="Bank" className="object-contain w-full h-full" />
                       </div>
                       <div>
@@ -91,7 +91,7 @@ export default function Gifts() {
                         <p className="text-sm text-gray-500">{account.accountName}</p>
                       </div>
                     </div>
-                    <Wallet className="w-5 h-5 text-rose-400" />
+                    <Wallet className="w-5 h-5 text-sky-400" />
                   </div>
 
                   <div className="mt-4">
@@ -101,7 +101,7 @@ export default function Gifts() {
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
                         onClick={() => copyToClipboard(account.accountNumber)}
-                        className="flex items-center space-x-1 text-rose-500 hover:text-rose-600"
+                        className="flex items-center space-x-1 text-sky-500 hover:text-sky-600"
                       >
                         {copiedAccount === account.accountNumber ? (
                           <CheckCircle className="w-4 h-4" />
@@ -124,12 +124,12 @@ export default function Gifts() {
             transition={{ delay: 0.6 }}
             className="mt-12 text-center"
           >
-            <div className="inline-block p-6 border shadow-lg backdrop-blur-sm bg-white/80 rounded-2xl border-rose-100/50">
-              <h3 className="mb-4 font-medium text-rose-600">Kirim Kado ke Alamat</h3>
+            <div className="inline-block p-6 border shadow-lg backdrop-blur-sm bg-white/80 rounded-2xl border-sky-100/50">
+              <h3 className="mb-4 font-medium text-sky-600">Kirim Kado ke Alamat</h3>
               <div className="flex flex-col items-center justify-center w-full h-full text-gray-400">
                 <p className="py-2 text-xs text-muted-foreground">Kamu dapat mengirimkan kado dengan alamat berikut:</p>
                 <div className="flex items-start space-x-4">
-                  <MapPin className="w-5 h-5 mt-1 text-rose-500" />
+                  <MapPin className="w-5 h-5 mt-1 text-sky-500" />
                   <div className="flex-col items-start">
                     <p className="flex-1 text-gray-800">{config.event.name}</p>
                     <p className="flex-1 text-gray-600 text-sm"> {config.meta.address}</p>

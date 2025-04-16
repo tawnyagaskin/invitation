@@ -8,8 +8,8 @@ export default function Events() {
         {/* Event Section */}
         <section id="event" className="min-h-screen relative overflow-hidden">
             {/* Decorative Background Elements */}
-            <div className="absolute inset-0 bg-gradient-to-b from-white via-rose-50/30 to-white" />
-            <div className="absolute top-0 left-0 w-64 h-64 bg-rose-100/20 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2" />
+            <div className="absolute inset-0 bg-gradient-to-b from-white via-sky-50/30 to-white" />
+            <div className="absolute top-0 left-0 w-64 h-64 bg-sky-100/20 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2" />
             <div className="absolute bottom-0 right-0 w-64 h-64 bg-pink-100/20 rounded-full blur-3xl translate-x-1/2 translate-y-1/2" />
 
             <motion.div
@@ -51,11 +51,11 @@ export default function Events() {
                         transition={{ delay: 0.5 }}
                         className="flex items-center justify-center gap-4 mt-6"
                     >
-                        <div className="h-[1px] w-12 bg-rose-200" />
-                        <div className="text-rose-400">
+                        <div className="h-[1px] w-12 bg-sky-200" />
+                        <div className="text-sky-400">
                             <Heart className="w-4 h-4" fill="currentColor" />
                         </div>
-                        <div className="h-[1px] w-12 bg-rose-200" />
+                        <div className="h-[1px] w-12 bg-sky-200" />
                     </motion.div>
                 </motion.div>
 

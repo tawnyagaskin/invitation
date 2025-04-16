@@ -9,11 +9,11 @@ export default function Location() {
       {/* Location section */}
       <section
         id="location"
-        className="relative min-h-screen overflow-hidden bg-gradient-to-b from-white via-rose-50/30 to-white"
+        className="relative min-h-screen overflow-hidden bg-gradient-to-b from-white via-sky-50/30 to-white"
       >
         {/* Decorative Elements */}
         <div className="absolute inset-0">
-          <div className="absolute top-0 right-0 w-64 h-64 translate-x-1/2 -translate-y-1/2 rounded-full bg-rose-100/20 blur-3xl" />
+          <div className="absolute top-0 right-0 w-64 h-64 translate-x-1/2 -translate-y-1/2 rounded-full bg-sky-100/20 blur-3xl" />
           <div className="absolute bottom-0 left-0 w-64 h-64 -translate-x-1/2 translate-y-1/2 rounded-full bg-pink-100/20 blur-3xl" />
         </div>
 
@@ -29,7 +29,7 @@ export default function Location() {
               initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
-              className="inline-block font-medium text-rose-500"
+              className="inline-block font-medium text-sky-500"
             >
               Lokasi Acara
             </motion.span>
@@ -50,9 +50,9 @@ export default function Location() {
               transition={{ delay: 0.4 }}
               className="flex items-center justify-center gap-4 pt-4"
             >
-              <div className="h-[1px] w-12 bg-rose-200" />
-              <MapPin className="w-5 h-5 text-rose-400" />
-              <div className="h-[1px] w-12 bg-rose-200" />
+              <div className="h-[1px] w-12 bg-sky-200" />
+              <MapPin className="w-5 h-5 text-sky-400" />
+              <div className="h-[1px] w-12 bg-sky-200" />
             </motion.div>
           </motion.div>
 
@@ -89,22 +89,22 @@ export default function Location() {
 
                 <div className="space-y-4">
                   <div className="flex items-start space-x-4">
-                    <MapPin className="w-5 h-5 mt-1 text-rose-500" />
+                    <MapPin className="w-5 h-5 mt-1 text-sky-500" />
                     <p className="flex-1 text-gray-600">{config.event.address}</p>
                   </div>
 
                   <div className="flex items-center space-x-4">
-                    <CalendarCheck className="w-5 h-5 text-rose-500" />
+                    <CalendarCheck className="w-5 h-5 text-sky-500" />
                     <p className="text-gray-600">{formatDate(config.event.dateTime)}</p>
                   </div>
 
                   <div className="flex items-center space-x-4">
-                    <Clock className="w-5 h-5 text-rose-500" />
+                    <Clock className="w-5 h-5 text-sky-500" />
                     <p className="text-gray-600">{config.event.time}</p>
                   </div>
 
                   <div className="flex items-center space-x-4">
-                    <Phone className="w-5 h-5 text-rose-500" />
+                    <Phone className="w-5 h-5 text-sky-500" />
                     <p className="text-gray-600">{config.event.phone}</p>
                   </div>
 
@@ -116,7 +116,7 @@ export default function Location() {
                                         rel="noopener noreferrer"
                                         whileHover={{ scale: 1.02 }}
                                         whileTap={{ scale: 0.98 }}
-                                        className="flex items-center justify-center gap-1.5 bg-rose-500 text-white px-4 py-2 rounded-lg hover:bg-rose-600 transition-colors text-sm"
+                                        className="flex items-center justify-center gap-1.5 bg-sky-500 text-white px-4 py-2 rounded-lg hover:bg-sky-600 transition-colors text-sm"
                                     >
                                         <NavigationIcon className="w-3.5 h-3.5" />
                                         <span>Directions</span>
@@ -128,7 +128,7 @@ export default function Location() {
                       rel="noopener noreferrer"
                       whileHover={{ scale: 1.02 }}
                       whileTap={{ scale: 0.98 }}
-                      className="flex items-center justify-center gap-1.5 bg-rose-500 text-white py-2 rounded-lg hover:bg-rose-600 transition-colors text-sm"
+                      className="flex items-center justify-center gap-1.5 bg-sky-500 text-white py-2 rounded-lg hover:bg-sky-600 transition-colors text-sm"
                     >
                       <ExternalLink className="w-3.5 h-3.5" />
                       <span>View Map</span>
@@ -138,8 +138,8 @@ export default function Location() {
               </div>
 
               {/* Additional Info */}
-              {/* <div className="p-4 border bg-rose-50/50 rounded-xl border-rose-100">
-                <p className="text-sm text-rose-600">
+              {/* <div className="p-4 border bg-sky-50/50 rounded-xl border-sky-100">
+                <p className="text-sm text-sky-600">
                 </p>
               </div> */}
             </motion.div>
