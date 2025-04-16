@@ -6,17 +6,17 @@ const config = {
     title: "Sekar & Rizki Wedding",
     description: "We are getting married and would love for you to be a part of our celebration.",
     address: "Jl. Kasatriyan, Gn. Gempal, Giri Peni, Kec. Wates, Kulon Progo",
-    ogImage: "/images/og-image.jpg", // OpenGraph image for social media
+    ogImage: "/images/og-image.jpg", 
     favicon: "/images/favicon.ico",
   },
 
   couple: {
-    groomName: "Rizki",
-    groomName_full: "Rizki Nurpadilah",
-    groomName_parents: "Bapak Fathul Qorib & Ibu Nurhayati",
-    brideName: "Sekar",
-    brideName_full: "Sekar Septi Ardiyati",
-    brideName_parents: "Bapak Suparjo & Ibu Sri Riyadiyati",
+    groomName: "Sekar",
+    groomName_full: "Sekar Septi Ardiyati",
+    groomName_parents: "Bapak Suparjo & Ibu Sri Riyadiyati",
+    brideName: "Rizki",
+    brideName_full: "Rizki Nurpadila",
+    brideName_parents: "Bapak Fathul Qorib & Ibu Nurhayati",
   },
 
   // Event Details

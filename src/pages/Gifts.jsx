@@ -62,33 +62,10 @@ export default function Gifts() {
               transition={{ delay: 0.5 }}
               className="max-w-md mx-auto space-y-4"
             >
-              {/* Arabic InsyaAllah */}
-              {/* <p className="text-xl text-gray-800 font-arabic">إن شاء الله</p> */}
 
-              {/* Main Message */}
-              {/* <p className="leading-relaxed text-gray-600">
-                Insya Allah, Kami Akan Menyalurkan Semua Hadiah yang Diberikan ke Beberapa Masjid dan Lembaga yang
-                Membutuhkan
-              </p> */}
-
-              {/* Arabic Dua */}
-              {/* <div className="space-y-2">
-                <p className="text-lg text-gray-800 font-arabic">جزاكم الله خيرا وبارك الله فيكم</p>
-                <p className="text-sm italic text-gray-600">Jazakumullahu khairan, Barakallah fiikum</p>
-              </div> */}
             </motion.div>
 
-            {/* Optional: Additional Decorative Element */}
-            {/* <motion.div
-              initial={{ scale: 0 }}
-              whileInView={{ scale: 1 }}
-              transition={{ delay: 0.6 }}
-              className="flex items-center justify-center gap-3 pt-4"
-            >
-              <div className="w-8 h-px bg-rose-200/50" />
-              <div className="w-1.5 h-1.5 rounded-full bg-rose-300" />
-              <div className="w-8 h-px bg-rose-200/50" />
-            </motion.div> */}
+
           </motion.div>
 
           {/* Bank Accounts Grid */}
