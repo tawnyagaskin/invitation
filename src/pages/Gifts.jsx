@@ -127,7 +127,7 @@ export default function Gifts() {
             <div className="inline-block p-6 border shadow-lg backdrop-blur-sm bg-white/80 rounded-2xl border-rose-100/50">
               <h3 className="mb-4 font-medium text-rose-600">Kirim Kado ke Alamat</h3>
               <div className="flex flex-col items-center justify-center w-full h-full text-gray-400">
-                <p className="py-2 text-xs text-muted-foreground">Anda dapat mengirimkan kado dengan alamat berikut:</p>
+                <p className="py-2 text-xs text-muted-foreground">Kamu dapat mengirimkan kado dengan alamat berikut:</p>
                 <div className="flex items-start space-x-4">
                   <MapPin className="w-5 h-5 mt-1 text-rose-500" />
                   <div className="flex-col items-start">

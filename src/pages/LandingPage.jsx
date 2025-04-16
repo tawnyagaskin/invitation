@@ -30,8 +30,9 @@ const LandingPage = ({ onOpenInvitation }) => {
     initial={{ opacity: 0 }}
     animate={{ opacity: 1 }}
     exit={{ opacity: 0 }}
-    className="min-h-screen relative overflow-hidden"
-  >
+      className="min-h-screen relative overflow-hidden bg-cover bg-center"
+      style={{ backgroundImage: "url('/images/cover.jpg')" }}
+    >
     {/* Decorative Background */}
     <div className="absolute inset-0 bg-gradient-to-b from-white via-rose-50/30 to-white" />
     <div className="absolute top-0 right-0 w-96 h-96 bg-rose-100/20 rounded-full blur-3xl translate-x-1/2 -translate-y-1/2" />
@@ -62,14 +63,14 @@ const LandingPage = ({ onOpenInvitation }) => {
             // Changed to vertical layout with space between items
             className="flex flex-col gap-4 mb-8 items-center"
           >
-            <div className="inline-flex flex-col items-center space-y-1 bg-white/80 px-6 py-3 rounded-xl">
+              <div className="inline-flex flex-col items-center space-y-1  px-6 py-3 rounded-xl">
               <Calendar className="w-5 h-5 text-rose-400" />
               <p className="text-gray-700 font-medium">
                 {formatDate(config.event.dateTime)}
               </p>
             </div>
 
-            <div className="inline-flex flex-col items-center space-y-1 bg-white/80 px-6 py-3 rounded-xl">
+              <div className="inline-flex flex-col items-center space-y-1  px-6 py-3 rounded-xl">
               <Clock className="w-5 h-5 text-rose-400" />
               <p className="text-gray-700 font-medium">
                 {config.event.time}

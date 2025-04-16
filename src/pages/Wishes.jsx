@@ -127,7 +127,7 @@ export default function Wishes() {
                         transition={{ delay: 0.2 }}
                         className="inline-block text-rose-500 font-medium"
                     >
-                        Kirimkan Doa dan Harapan Terbaik Anda
+                        Kirimkan Doa dan Harapan Terbaik Kamu
                     </motion.span>
 
                     <motion.h2
@@ -319,7 +319,7 @@ export default function Wishes() {
                             <div className="flex items-center justify-between mt-4">
                                 <div className="flex items-center space-x-2 text-gray-500">
                                     <Smile className="w-5 h-5" />
-                                    <span className="text-sm">Berikan Doa Anda</span>
+                                    <span className="text-xs">Berikan Doa Kamu</span>
                                 </div>
                                 <motion.button
                                     whileHover={{ scale: 1.02 }}
@@ -330,7 +330,7 @@ export default function Wishes() {
                                             : 'bg-rose-500 hover:bg-rose-600'}`}
                                 >
                                     <Send className="w-4 h-4" />
-                                    <span>{isSubmitting ? 'Mengirim...' : 'Kirimkan Doa'}</span>
+                                    <span className='text-base'>{isSubmitting ? 'Mengirim...' : 'Kirimkan Doa'}</span>
                                 </motion.button>
                             </div>
                         </div>
