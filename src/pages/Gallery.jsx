@@ -8,30 +8,34 @@ const albums = [
     id: 1,
     title: "",
     photos: [
-      "/images/cover.jpg",
-      "/images/cover.jpg",
-      "/images/cover.jpg",
-      "/images/cover.jpg",
+      "/images/galeri1-3.jpg",
+      "/images/galeri1-2.jpg", //need update
+      "/images/galeri1-4.jpg", //need update
+      "/images/galeri1.jpg",
+
+
     ]
   },
   {
     id: 2,
     title: "",
     photos: [
-      "/images/cover.jpg",
-      "/images/cover.jpg",
-      "/images/cover.jpg",
-      "/images/cover.jpg",
+      "/images/galeri2-1.jpg",
+      "/images/galeri2-2.jpg",
+      "/images/galeri2-3.jpg",
+      "/images/galeri2-4.jpg",
     ]
   },
   {
     id: 3,
     title: "",
     photos: [
-      "/images/cover.jpg",
-      "/images/cover.jpg",
-      "/images/cover.jpg",
-      "/images/cover.jpg",
+      "/images/galeri3-3.jpg",
+      "/images/galeri3-2.jpg", //need update
+      "/images/galeri3-1.jpg",
+      "/images/galeri3-4.jpg", //need update
+
+
     ]
   }
 ];
@@ -181,7 +185,7 @@ export default function Gallery() {
                 exit={{ scale: 0.8 }}
                 transition={{ type: 'spring', stiffness: 200, damping: 20 }}
                 className="max-w-3xl w-full max-h-[90vh] object-contain rounded-lg shadow-xl"
-                // onClick={(e) => e.stopPropagation()} // biar klik di gambar gak close
+              // onClick={(e) => e.stopPropagation()} // biar klik di gambar gak close
               />
             </motion.div>
           )}

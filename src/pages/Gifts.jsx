@@ -127,16 +127,15 @@ export default function Gifts() {
             <div className="inline-block p-6 border shadow-lg backdrop-blur-sm bg-white/80 rounded-2xl border-rose-100/50">
               <h3 className="mb-4 font-medium text-rose-600">Kirim Kado ke Alamat</h3>
               <div className="flex flex-col items-center justify-center w-full h-full text-gray-400">
-                <p className="py-2 text-xs text-muted-foreground">Kamu dapat mengirimkan kado dengan alamat berikut:</p>
+                <p className="py-2 text-xs text-muted-foreground">Anda dapat mengirimkan kado dengan alamat berikut:</p>
+                <br />
                 <div className="flex items-start space-x-4">
-                  <MapPin className="w-5 h-5 mt-1 text-rose-500" />
+                  {/* <MapPin className="w-5 h-5 mt-1 text-rose-500" /> */}
                   <div className="flex-col items-start">
-                    <p className="flex-1 text-gray-800">{config.event.name}</p>
-                    <p className="flex-1 text-gray-600 text-sm"> {config.meta.address}</p>
+                    <p className="flex-1 text-gray-600 text-sm">Jl. Bojong Sari 1 Blok D8 No.12, RT.002/RW.012, Taman Narogong Indah, Bojong Rawalumbu, Kec. Rawalumbu, Kota Bekasi, Jawa Barat 17116</p>
                   </div>
                 </div>
               </div>
-              {/* <p className="text-sm text-gray-500">Pindai untuk Mengirimkan Hadiah via Dompet Digital</p> */}
             </div>
           </motion.div>
         </div>
