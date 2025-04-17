@@ -147,6 +147,114 @@ export default function Hero() {
                             transition={{ delay: 0.6 }}
                             className="text-4xl italic font-serif bg-clip-text text-transparent bg-gradient-to-r from-sky-600 to-pink-600"
                         >
+                            {config.couple.groomName} & {config.couple.brideName}
+                        </motion.h2>
+
+                    </div>
+                    {/* Decorative Line */}
+
+
+                    {/* Time and Date Info */}
+                    <motion.div
+                        initial={{ y: 20, opacity: 0 }}
+                        animate={{ y: 0, opacity: 1 }}
+                        transition={{ delay: 0.8 }}
+                        className="relative max-w-md mx-auto"
+                    >
+                        {/* Decorative Elements */}
+                        <div className="absolute inset-0 bg-gradient-to-b from-sky-50/50 to-white/50 backdrop-blur-md rounded-2xl" />
+
+                        <div className="relative px-8 py-10 rounded-2xl border border-sky-100/50">
+
+
+                            {/* Content */}
+                            <div className="space-y-6 text-center">
+                                {/* Date and Time */}
+                                <div className="space-y-3">
+                                    <motion.div
+                                        initial={{ opacity: 0 }}
+                                        animate={{ opacity: 1 }}
+                                        transition={{ delay: 0.9 }}
+                                        className="flex items-center justify-center space-x-2"
+                                    >
+                                        <Calendar className="w-4 h-4 text-sky-400" />
+                                        <span className="text-gray-700 font-medium">
+                                            {formatDate(config.event.dateTime)}
+                                        </span>
+                                    </motion.div>
+
+                                    <motion.div
+                                        initial={{ opacity: 0 }}
+                                        animate={{ opacity: 1 }}
+                                        transition={{ delay: 1 }}
+                                        className="flex items-center justify-center space-x-2"
+                                    >
+                                        <Clock className="w-4 h-4 text-sky-400" />
+                                        <span className="text-gray-700 font-medium">
+                                            {config.event.time}
+                                        </span>
+                                    </motion.div>
+                                </div>
+
+                                {/* Divider */}
+
+
+                                {/* Invitation Text */}
+
+                            </div>
+
+                            {/* Bottom Decorative Line */}
+
+                        </div>
+
+                        {/* Background Blur Circles */}
+                        <div className="absolute -top-4 -right-4 w-24 h-24 bg-sky-100/20 rounded-full blur-xl" />
+                        <div className="absolute -bottom-4 -left-4 w-24 h-24 bg-sky-100/20 rounded-full blur-xl" />
+                    </motion.div>
+
+                    {/* Countdown Timer */}
+                    <CountdownTimer targetDate={config.event.dateTime} />
+
+                    {/* Decorative Elements */}
+                    <motion.div
+                        initial={{ scale: 0 }}
+                        whileInView={{ scale: 1 }}
+                        transition={{ delay: 0.5 }}
+                        className="flex items-center justify-center gap-4 mt-6"
+                    >
+                        <div className="h-[1px] w-12 bg-sky-200" />
+                        <div className="text-sky-400">
+                            <CalendarHeart className="w-4 h-4" fill="currentColor" />
+                        </div>
+                        <div className="h-[1px] w-12 bg-sky-200" />
+                    </motion.div>
+
+
+                    <div>
+
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+
+                        <motion.p
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ delay: 0.4 }}
+                            className="text-gray-500 max-w-md mx-auto"
+                        >
+                            Kami mohon do'a & restunya atas pernikahan kami                        </motion.p>
+                        <br />
+
+                        <br />
+                        <br />
+                        <motion.h2
+                            initial={{ scale: 0.8, opacity: 0 }}
+                            animate={{ scale: 1, opacity: 1 }}
+                            transition={{ delay: 0.6 }}
+                            className="text-4xl italic font-serif bg-clip-text text-transparent bg-gradient-to-r from-sky-600 to-pink-600"
+                        >
                             {config.couple.groomName_full}
                         </motion.h2>
                         <motion.span
@@ -180,124 +288,7 @@ export default function Hero() {
                             className="text-sm italic font-serif bg-clip-text text-transparent bg-gradient-to-r from-sky-600 to-pink-600"
                         >
                             Putri dari {config.couple.brideName_parents}
-                        </motion.span>
-                    </div>
-                    {/* Decorative Line */}
-                    <motion.div
-                        initial={{ scale: 0 }}
-                        whileInView={{ scale: 1 }}
-                        transition={{ delay: 0.5 }}
-                        className="flex items-center justify-center gap-4 mt-6"
-                    >
-                        <div className="h-[1px] w-12 bg-sky-200" />
-                        <div className="text-sky-400">
-                            <CalendarHeart className="w-4 h-4" fill="currentColor" />
-                        </div>
-                        <div className="h-[1px] w-12 bg-sky-200" />
-                    </motion.div>
-
-                    {/* Time and Date Info */}
-                    <motion.div
-                        initial={{ y: 20, opacity: 0 }}
-                        animate={{ y: 0, opacity: 1 }}
-                        transition={{ delay: 0.8 }}
-                        className="relative max-w-md mx-auto"
-                    >
-                        {/* Decorative Elements */}
-                        <div className="absolute inset-0 bg-gradient-to-b from-sky-50/50 to-white/50 backdrop-blur-md rounded-2xl" />
-
-                        <div className="relative px-8 py-10 rounded-2xl border border-sky-100/50">
-                            {/* Top Decorative Line */}
-                            <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-px">
-                                <div className="w-32 h-[2px] bg-gradient-to-r from-transparent via-sky-200 to-transparent" />
-                            </div>
-
-                            {/* Content */}
-                            <div className="space-y-6 text-center">
-                                {/* Date and Time */}
-                                <div className="space-y-3">
-                                    <motion.div
-                                        initial={{ opacity: 0 }}
-                                        animate={{ opacity: 1 }}
-                                        transition={{ delay: 0.9 }}
-                                        className="flex items-center justify-center space-x-2"
-                                    >
-                                        <Calendar className="w-4 h-4 text-sky-400" />
-                                        <span className="text-gray-700 font-medium">
-                                            {formatDate(config.event.dateTime)}
-                                        </span>
-                                    </motion.div>
-
-                                    <motion.div
-                                        initial={{ opacity: 0 }}
-                                        animate={{ opacity: 1 }}
-                                        transition={{ delay: 1 }}
-                                        className="flex items-center justify-center space-x-2"
-                                    >
-                                        <Clock className="w-4 h-4 text-sky-400" />
-                                        <span className="text-gray-700 font-medium">
-                                            {config.event.time}
-                                        </span>
-                                    </motion.div>
-                                </div>
-
-                                {/* Divider */}
-                                <div className="flex items-center justify-center gap-3">
-                                    <div className="h-px w-12 bg-sky-200/50" />
-                                    <div className="w-2 h-2 rounded-full bg-sky-200" />
-                                    <div className="h-px w-12 bg-sky-200/50" />
-                                </div>
-
-                                {/* Invitation Text */}
-                                <motion.div
-                                    initial={{ opacity: 0 }}
-                                    animate={{ opacity: 1 }}
-                                    transition={{ delay: 1.1 }}
-                                    className="space-y-2"
-                                >
-                                    <p className="text-gray-500 font-serif italic">
-                                        Kepada Yth.
-                                    </p>
-                                    <p className="text-gray-600 font-medium">
-                                        Bapak/Ibu/Saudara/i
-                                    </p>
-                                    <p className="text-sky-500 font-semibold text-2xl">
-                                        {guestName ? guestName : "Tamu"}
-                                    </p>
-                                </motion.div>
-                            </div>
-
-                            {/* Bottom Decorative Line */}
-                            <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-px">
-                                <div className="w-32 h-[2px] bg-gradient-to-r from-transparent via-sky-200 to-transparent" />
-                            </div>
-                        </div>
-
-                        {/* Background Blur Circles */}
-                        <div className="absolute -top-4 -right-4 w-24 h-24 bg-sky-100/20 rounded-full blur-xl" />
-                        <div className="absolute -bottom-4 -left-4 w-24 h-24 bg-sky-100/20 rounded-full blur-xl" />
-                    </motion.div>
-
-                    {/* Countdown Timer */}
-                    <CountdownTimer targetDate={config.event.dateTime} />
-
-                    {/* Decorative Elements */}
-                    <div className="pt-6 relative">
-                        <FloatingHearts />
-                        <motion.div
-                            animate={{
-                                scale: [1, 1.1, 1],
-                                rotate: [0, 5, -5, 0]
-                            }}
-                            transition={{
-                                duration: 2,
-                                repeat: Infinity,
-                                ease: "easeInOut"
-                            }}
-                        >
-                            <Heart className="w-12 h-12 text-sky-500 mx-auto" fill="currentColor" />
-                        </motion.div>
-                    </div>
+                        </motion.span></div>
                 </motion.div>
             </section>
         </>

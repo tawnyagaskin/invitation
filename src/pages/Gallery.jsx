@@ -73,7 +73,7 @@ export default function Gallery() {
       {/* Decorative Background */}
       <div className="absolute inset-0 bg-gradient-to-b from-white via-sky-50/10 to-white" />
       <div className="absolute top-0 right-0 w-96 h-96 bg-sky-100/10 rounded-full blur-3xl translate-x-1/2 -translate-y-1/2" />
-      <div className="absolute bottom-0 left-0 w-96 h-96 bg-pink-100/10 rounded-full blur-3xl -translate-x-1/2 translate-y-1/2" />
+      <div className="absolute bottom-0 left-0 w-96 h-96 bg-sky-100/10 rounded-full blur-3xl -translate-x-1/2 translate-y-1/2" />
 
       <div className="container mx-auto px-4 py-20 relative z-10">
         {/* Section Header */}
@@ -98,7 +98,7 @@ export default function Gallery() {
             transition={{ delay: 0.3 }}
             className="text-4xl md:text-5xl font-serif text-gray-800"
           >
-            Gallery Prewedding
+            Gallery 
           </motion.h2>
 
           {/* Decorative Divider */}

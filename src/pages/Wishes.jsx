@@ -111,7 +111,7 @@ export default function Wishes() {
             {/* Decorative Background */}
             <div className="absolute inset-0 bg-gradient-to-b from-white via-sky-50/30 to-white" />
             <div className="absolute top-0 right-0 w-96 h-96 bg-sky-100/20 rounded-full blur-3xl translate-x-1/2 -translate-y-1/2" />
-            <div className="absolute bottom-0 left-0 w-96 h-96 bg-pink-100/20 rounded-full blur-3xl -translate-x-1/2 translate-y-1/2" />
+            <div className="absolute bottom-0 left-0 w-96 h-96 bg-sky-100/20 rounded-full blur-3xl -translate-x-1/2 translate-y-1/2" />
 
             <div className="container mx-auto px-4 py-20 relative z-10">
                 {/* Section Header */}
@@ -168,7 +168,7 @@ export default function Wishes() {
                                     className="group relative w-[280px]"
                                 >
                                     {/* Background gradient */}
-                                    <div className="absolute inset-0 bg-gradient-to-r from-sky-100/50 to-pink-100/50 rounded-xl transform transition-transform group-hover:scale-[1.02] duration-300" />
+                                    <div className="absolute inset-0 bg-gradient-to-r from-sky-100/50 to-sky-100/50 rounded-xl transform transition-transform group-hover:scale-[1.02] duration-300" />
 
                                     {/* Card content */}
                                     <div className="relative backdrop-blur-sm bg-white/80 p-4 rounded-xl border border-sky-100/50 shadow-md">
@@ -176,7 +176,7 @@ export default function Wishes() {
                                         <div className="flex items-start space-x-3 mb-2">
                                             {/* Avatar */}
                                             <div className="flex-shrink-0">
-                                                <div className="w-8 h-8 rounded-full bg-gradient-to-r from-sky-400 to-pink-400 flex items-center justify-center text-white text-sm font-medium">
+                                                <div className="w-8 h-8 rounded-full bg-gradient-to-r from-sky-400 to-sky-400 flex items-center justify-center text-white text-sm font-medium">
                                                     {wish.name[0].toUpperCase()}
                                                 </div>
                                             </div>

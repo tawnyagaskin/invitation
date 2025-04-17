@@ -14,7 +14,7 @@ export default function Location() {
         {/* Decorative Elements */}
         <div className="absolute inset-0">
           <div className="absolute top-0 right-0 w-64 h-64 translate-x-1/2 -translate-y-1/2 rounded-full bg-sky-100/20 blur-3xl" />
-          <div className="absolute bottom-0 left-0 w-64 h-64 -translate-x-1/2 translate-y-1/2 rounded-full bg-pink-100/20 blur-3xl" />
+          <div className="absolute bottom-0 left-0 w-64 h-64 -translate-x-1/2 translate-y-1/2 rounded-full bg-sky-100/20 blur-3xl" />
         </div>
 
         <div className="container relative z-10 px-4 py-20 mx-auto">

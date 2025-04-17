@@ -15,7 +15,7 @@ export default function Gifts() {
         {/* Decorative Background */}
         <div className="absolute inset-0 bg-gradient-to-b from-white via-sky-50/30 to-white" />
         <div className="absolute top-0 right-0 translate-x-1/2 -translate-y-1/2 rounded-full w-96 h-96 bg-sky-100/20 blur-3xl" />
-        <div className="absolute bottom-0 left-0 -translate-x-1/2 translate-y-1/2 rounded-full w-96 h-96 bg-pink-100/20 blur-3xl" />
+        <div className="absolute bottom-0 left-0 -translate-x-1/2 translate-y-1/2 rounded-full w-96 h-96 bg-sky-100/20 blur-3xl" />
 
         <div className="container relative z-10 px-4 py-20 mx-auto">
           {/* Section Header */}
@@ -78,7 +78,7 @@ export default function Gifts() {
                 transition={{ delay: 0.2 * index }}
                 className="relative group"
               >
-                <div className="absolute inset-0 transition-transform duration-300 transform bg-gradient-to-r from-sky-100/50 to-pink-100/50 rounded-2xl group-hover:scale-105" />
+                <div className="absolute inset-0 transition-transform duration-300 transform bg-gradient-to-r from-sky-100/50 to-sky-100/50 rounded-2xl group-hover:scale-105" />
                 <div className="relative p-6 border shadow-lg backdrop-blur-sm bg-white/80 rounded-2xl border-sky-100/50">
                   <div className="flex items-center justify-between">
                     <div className="flex items-center space-x-4">
@@ -130,7 +130,6 @@ export default function Gifts() {
                 <p className="py-2 text-xs text-muted-foreground">Anda dapat mengirimkan kado dengan alamat berikut:</p>
                 <br />
                 <div className="flex items-start space-x-4">
-                  <MapPin className="w-5 h-5 mt-1 text-sky-500" />
                   {/* <MapPin className="w-5 h-5 mt-1 text-rose-500" /> */}
                   <div className="flex-col items-start">
                     <p className="flex-1 text-gray-600 text-sm">Jl. Bojong Sari 1 Blok D8 No.12, RT.002/RW.012, Taman Narogong Indah, Bojong Rawalumbu, Kec. Rawalumbu, Kota Bekasi, Jawa Barat 17116</p>

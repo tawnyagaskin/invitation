@@ -10,7 +10,7 @@ export default function Events() {
             {/* Decorative Background Elements */}
             <div className="absolute inset-0 bg-gradient-to-b from-white via-sky-50/30 to-white" />
             <div className="absolute top-0 left-0 w-64 h-64 bg-sky-100/20 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2" />
-            <div className="absolute bottom-0 right-0 w-64 h-64 bg-pink-100/20 rounded-full blur-3xl translate-x-1/2 translate-y-1/2" />
+            <div className="absolute bottom-0 right-0 w-64 h-64 bg-sky-100/20 rounded-full blur-3xl translate-x-1/2 translate-y-1/2" />
 
             <motion.div
                 initial={{ opacity: 0 }}
@@ -32,8 +32,7 @@ export default function Events() {
                         transition={{ delay: 0.3 }}
                         className="text-4xl md:text-5xl font-serif text-gray-800 leading-tight"
                     >
-                        Rangkaian Acara Pernikahan
-                    </motion.h2>
+                        Acara                    </motion.h2>
 
                     <motion.p
                         initial={{ opacity: 0, y: 20 }}
@@ -71,7 +70,6 @@ export default function Events() {
             </motion.div>
 
             {/* Decorative Bottom Pattern */}
-            <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-white to-transparent" />
         </section>
     </>)
 }
