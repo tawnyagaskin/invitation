@@ -14,7 +14,7 @@ import { cn } from "@/lib/utils";
 const menuItems = [
   { icon: Home, label: '', href: '#home' },
   { icon: CalendarHeart, label: '', href: '#event' },
-  { icon: MapPin, label: '', href: '#location' },
+  // { icon: MapPin, label: '', href: '#location' },
   { icon: Gift, label: '', href: '#gifts' },
   { icon: BookHeart, label: '', href: '#gallery' },
   { icon: MessageCircleHeart, label: '', href: '#wishes' },

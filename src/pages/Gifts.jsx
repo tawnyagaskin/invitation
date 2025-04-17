@@ -16,7 +16,7 @@ export default function Gifts() {
   return (
     <>
       {/* Header + Tombol selalu tampil */}
-      <div className="py-20 text-center">
+      <section id="gifts"><div className="py-20 text-center">
         <motion.span
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
@@ -47,11 +47,12 @@ export default function Gifts() {
             {showDetails ? "Tutup" : "Klik di sini"}
           </button>
         </motion.div>
-      </div>
+      </div></section>
+
 
       {/* Konten detail ditampilkan hanya jika showDetails true */}
       {showDetails && (
-        <section id="gifts" className="relative overflow-hidden py-10">
+        <section id="gifts-1" className="relative overflow-hidden py-10">
           {/* Background gradasi */}
           <div className="absolute inset-0 bg-gradient-to-b from-white via-sky-50/30 to-white" />
           <div className="absolute top-0 right-0 translate-x-1/2 -translate-y-1/2 rounded-full w-96 h-96 bg-sky-100/20 blur-3xl" />
