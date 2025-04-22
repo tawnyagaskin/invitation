@@ -30,9 +30,9 @@ export default function Gifts() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3 }}
-          className="font-serif text-sm text-gray-500 mt-4"
+          className="font-serif text-sm text-gray-500 mt-4 px-4"
         >
-          Kehadiran dan doa restu merupakan karunia yang sangat berarti bagi kami. Namun, jika ingin berbagi kebahagiaan melalui tanda kasih, berikut detailnya:
+          Kehadiran dan doa restu merupakan karunia yang sangat berarti bagi kami. Namun, jika ingin berbagi kebahagiaan melalui tanda kasih, berikut detailnya
         </motion.h2>
 
         <motion.div
@@ -52,7 +52,7 @@ export default function Gifts() {
 
       {/* Konten detail ditampilkan hanya jika showDetails true */}
       {showDetails && (
-        <section id="gifts-1" className="relative overflow-hidden py-10">
+        <section id="gifts-1" className="relative overflow-hidden pb-10">
           {/* Background gradasi */}
           <div className="absolute inset-0 bg-gradient-to-b from-white via-sky-50/30 to-white" />
           <div className="absolute top-0 right-0 translate-x-1/2 -translate-y-1/2 rounded-full w-96 h-96 bg-sky-100/20 blur-3xl" />
@@ -64,7 +64,7 @@ export default function Gifts() {
               initial={{ scale: 0 }}
               animate={{ scale: 1 }}
               transition={{ delay: 0.1 }}
-              className="flex items-center justify-center gap-4 pt-4"
+              className="flex items-center justify-center gap-4"
             >
               <div className="h-[1px] w-12 bg-sky-200" />
               <Gift className="w-5 h-5 text-sky-400" />
@@ -130,9 +130,24 @@ export default function Gifts() {
             >
               <div className="inline-block p-6 border shadow-lg backdrop-blur-sm bg-white/80 rounded-2xl border-sky-100/50">
                 <h3 className="mb-4 font-medium text-sky-600">Kirim Kado ke Alamat</h3>
-                <div className="text-sm text-gray-600 max-w-md mx-auto">
+                {/* <div className="text-sm text-gray-600 max-w-md mx-auto">
                   Jl. Bojong Sari 1 Blok D8 No.12, RT.002/RW.012, Taman Narogong Indah, Bojong Rawalumbu,
                   Kec. Rawalumbu, Kota Bekasi, Jawa Barat 17116
+                </div> */}
+                <div className="flex items-center justify-between px-4 py-3 rounded-lg bg-gray-50/80">
+                  <p className="font-mono text-gray-700">{config?.event?.gift_address}</p>
+                  <motion.button
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    onClick={() => copyToClipboard(config?.event?.gift_address)}
+                    className="flex items-center space-x-1 text-sky-500 hover:text-sky-600"
+                  >
+                    {copiedAccount === config?.event?.gift_address ? (
+                      <CheckCircle className="w-4 h-4" />
+                    ) : (
+                      <Copy className="w-4 h-4" />
+                    )}
+                  </motion.button>
                 </div>
               </div>
             </motion.div>

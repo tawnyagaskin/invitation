@@ -27,6 +27,7 @@ const config = {
     dateTime: "2025-08-10T00:00:00Z", // ISO 8601 format
     name: "Lelados Coffee & Space",
     address: "Jl. Kasatriyan, Gn. Gempal, Giri Peni, Kec. Wates, Kulon Progo",
+    gift_address: "Jl. Bojong Sari 1 Blok D8 No.12, RT.002/RW.012. Taman Narogong Indah, Bojong Rawalumbu, Kec. Rawalumbu, Kota Bekasi, Jawa Barat 17116",
     time: "08:00 - 12:00 WIB",
     phone: "+62 877 8665 3726",
     maps_url: "https://maps.app.goo.gl/28XyJo3maAuy7SAC9",

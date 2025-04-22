@@ -196,10 +196,6 @@ export default function Hero() {
                                     </motion.div>
                                 </div>
 
-                                {/* Divider */}
-
-
-                                {/* Invitation Text */}
 
                             </div>
 
@@ -224,36 +220,44 @@ export default function Hero() {
                     >
                         <div className="h-[1px] w-12 bg-sky-200" />
                         <div className="text-sky-400">
-                            <CalendarHeart className="w-4 h-4" fill="currentColor" />
+                            <Heart className="w-4 h-4" fill="currentColor" />
                         </div>
                         <div className="h-[1px] w-12 bg-sky-200" />
                     </motion.div>
 
 
                     <div>
-
-                        <br />
-                        <br />
-                        <br />
-                        <br />
-                        <br />
+                        <motion.p
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            transition={{ delay: 0.4 }}
+                            className="text-gray-500 font-light italic pt-4 px-2"
+                        >
+                            "Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia menciptakan pasangan-pasangan untukmu dari (jenis) dirimu sendiri agar kamu merasa tenteram kepadanya, dan Dia menjadikan di antaramu rasa cinta dan kasih sayang. Sesungguhnya pada yang demikian itu benar-benar terdapat tanda-tanda (kebesaran Allah) bagi kaum yang berpikir."
+                        </motion.p>
+                        <motion.p
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            transition={{ delay: 0.4 }}
+                            className="text-gray-500 font-light italic text-xl py-4"
+                        >
+                            QS. Ar-Rum: 21
+                        </motion.p>
 
                         <motion.p
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ delay: 0.4 }}
-                            className="text-gray-500 max-w-md mx-auto"
+                            className="text-gray-500 max-w-md mx-auto pt-8"
                         >
-                            Kami mohon do'a & restunya atas pernikahan kami                        </motion.p>
-                        <br />
+                            Kami mohon Do'a & Restunya atas pernikahan kami
+                        </motion.p>
 
-                        <br />
-                        <br />
                         <motion.h2
                             initial={{ scale: 0.8, opacity: 0 }}
                             animate={{ scale: 1, opacity: 1 }}
                             transition={{ delay: 0.6 }}
-                            className="text-4xl italic font-serif bg-clip-text text-transparent bg-gradient-to-r from-sky-600 to-pink-600"
+                            className="text-4xl pt-16 italic font-serif bg-clip-text text-transparent bg-gradient-to-r from-sky-600 to-pink-600"
                         >
                             {config.couple.groomName_full}
                         </motion.h2>
@@ -263,13 +267,13 @@ export default function Hero() {
                             transition={{ delay: 0.6 }}
                             className="text-sm italic font-serif bg-clip-text text-transparent bg-gradient-to-r from-sky-600 to-pink-600"
                         >
-                            Putra dari {config.couple.groomName_parents}
+                            Putri dari {config.couple.groomName_parents}
                         </motion.span>
                         <motion.h2
                             initial={{ scale: 0.8, opacity: 0 }}
                             animate={{ scale: 1, opacity: 1 }}
                             transition={{ delay: 0.6 }}
-                            className="text-5xl italic font-serif bg-clip-text text-transparent bg-gradient-to-r from-sky-600 to-pink-600"
+                            className="text-5xl pt-8 italic font-serif bg-clip-text text-transparent bg-gradient-to-r from-sky-600 to-pink-600"
                         >
                             &
                         </motion.h2>
@@ -277,7 +281,7 @@ export default function Hero() {
                             initial={{ scale: 0.8, opacity: 0 }}
                             animate={{ scale: 1, opacity: 1 }}
                             transition={{ delay: 0.6 }}
-                            className="text-4xl italic font-serif bg-clip-text text-transparent bg-gradient-to-r from-sky-600 to-pink-600"
+                            className="text-4xl pt-8 italic font-serif bg-clip-text text-transparent bg-gradient-to-r from-sky-600 to-pink-600"
                         >
                             {config.couple.brideName_full}
                         </motion.h2>
@@ -287,7 +291,7 @@ export default function Hero() {
                             transition={{ delay: 0.6 }}
                             className="text-sm italic font-serif bg-clip-text text-transparent bg-gradient-to-r from-sky-600 to-pink-600"
                         >
-                            Putri dari {config.couple.brideName_parents}
+                            Putra dari {config.couple.brideName_parents}
                         </motion.span></div>
                 </motion.div>
             </section>
