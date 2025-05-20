@@ -4,6 +4,7 @@ import Location from '@/pages/Location';
 import Wishes from '@/pages/Wishes';
 import Gifts from '@/pages/Gifts';
 import Gallery from '@/pages/Gallery';
+import RSVP from './RSVP';
 
 // Main Invitation Content
 export default function MainContent() {
@@ -15,6 +16,7 @@ export default function MainContent() {
             <Gifts />
             <Gallery />
             <Wishes />
+            <RSVP />
         </>
     )
 }
