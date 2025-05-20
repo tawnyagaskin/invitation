@@ -1,43 +1,39 @@
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 
-// Sample data for 3 albums
+// Sample data for 3 albums with optimized image paths
 const albums = [
   {
     id: 1,
     title: "",
     photos: [
-      "/images/galeri1-3.jpg",
-      "/images/galeri1-2.jpg", //need update
-      "/images/galeri1-4.jpg", //need update
-      "/images/galeri1.jpg",
-
-
-    ]
+      { src: "/images/galeri1-3.jpg", thumbnail: "/images/galeri1-3.jpg" },
+      { src: "/images/galeri1-2.jpg", thumbnail: "/images/galeri1-2.jpg" },
+      { src: "/images/galeri1-4.jpg", thumbnail: "/images/galeri1-4.jpg" },
+      { src: "/images/galeri1.jpg", thumbnail: "/images/galeri1.jpg" },
+    ],
   },
   {
     id: 2,
     title: "",
     photos: [
-      "/images/galeri2-1.jpg",
-      "/images/galeri2-2.jpg",
-      "/images/galeri2-3.jpg",
-      "/images/galeri2-4.jpg",
-    ]
+      { src: "/images/galeri2-1.jpg", thumbnail: "/images/galeri2-1.jpg" },
+      { src: "/images/galeri2-2.jpg", thumbnail: "/images/galeri2-2.jpg" },
+      { src: "/images/galeri2-3.jpg", thumbnail: "/images/galeri2-3.jpg" },
+      { src: "/images/galeri2-4.jpg", thumbnail: "/images/galeri2-4.jpg" },
+    ],
   },
   {
     id: 3,
     title: "",
     photos: [
-      "/images/galeri3-3.jpg",
-      "/images/galeri3-2.jpg", //need update
-      "/images/galeri3-1.jpg",
-      "/images/galeri3-4.jpg", //need update
-
-
-    ]
-  }
+      { src: "/images/galeri3-3.jpg", thumbnail: "/images/galeri3-3.jpg" },
+      { src: "/images/galeri3-2.jpg", thumbnail: "/images/galeri3-2.jpg" },
+      { src: "/images/galeri3-1.jpg", thumbnail: "/images/galeri3-1.jpg" },
+      { src: "/images/galeri3-4.jpg", thumbnail: "/images/galeri3-4.jpg" },
+    ],
+  },
 ];
 
 export default function Gallery() {
@@ -56,17 +52,18 @@ export default function Gallery() {
     return () => clearInterval(interval);
   }, [isAutoPlaying]);
 
-  const nextAlbum = () => {
+  // Debounced navigation functions
+  const nextAlbum = useCallback(() => {
     setCurrentAlbumIndex((prev) => (prev + 1) % albums.length);
     setIsAutoPlaying(false);
     setTimeout(() => setIsAutoPlaying(true), 10000);
-  };
+  }, []);
 
-  const prevAlbum = () => {
+  const prevAlbum = useCallback(() => {
     setCurrentAlbumIndex((prev) => (prev - 1 + albums.length) % albums.length);
     setIsAutoPlaying(false);
     setTimeout(() => setIsAutoPlaying(true), 10000);
-  };
+  }, []);
 
   return (
     <section id="gallery" className="min-h-screen relative overflow-hidden bg-sky-50/30">
@@ -91,17 +88,14 @@ export default function Gallery() {
           >
             Kenangan Indah Kami
           </motion.span>
-
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3 }}
             className="text-4xl md:text-5xl font-serif text-gray-800"
           >
-            Gallery 
+            Galeri
           </motion.h2>
-
-          {/* Decorative Divider */}
           <motion.div
             initial={{ scale: 0 }}
             whileInView={{ scale: 1 }}
@@ -111,7 +105,11 @@ export default function Gallery() {
             <div className="h-[1px] w-12 bg-sky-200" />
             <div className="w-5 h-5 text-sky-400">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                <path fillRule="evenodd" d="M1.5 6a2.25 2.25 0 012.25-2.25h16.5A2.25 2.25 0 0122.5 6v12a2.25 2.25 0 01-2.25 2.25H3.75A2.25 2.25 0 011.5 18V6zM3 16.06V18c0 .414.336.75.75.75h16.5A.75.75 0 0021 18v-1.94l-2.69-2.689a1.5 1.5 0 00-2.12 0l-.88.879.97.97a.75.75 0 11-1.06 1.06l-5.16-5.159a1.5 1.5 0 00-2.12 0L3 16.061zm10.125-7.81a1.125 1.125 0 112.25 0 1.125 1.125 0 01-2.25 0z" clipRule="evenodd" />
+                <path
+                  fillRule="evenodd"
+                  d="M1.5 6a2.25 2.25 0 012.25-2.25h16.5A2.25 2.25 0 0122.5 6v12a2.25 2.25 0 01-2.25 2.25H3.75A2.25 2.25 0 011.5 18V6zM3 16.06V18c0 .414.336.75.75.75h16.5A.75.75 0 0021 18v-1.94l-2.69-2.689a1.5 1.5 0 00-2.12 0l-.88.879.97.97a.75.75 0 11-1.06 1.06l-5.16-5.159a1.5 1.5 0 00-2.12 0L3 16.061zm10.125-7.81a1.125 1.125 0 112.25 0 1.125 1.125 0 01-2.25 0z"
+                  clipRule="evenodd"
+                />
               </svg>
             </div>
             <div className="h-[1px] w-12 bg-sky-200" />
@@ -119,76 +117,81 @@ export default function Gallery() {
         </motion.div>
 
         {/* Album Carousel */}
-        <div className="relative max-w-4xl mx-auto">
+        <div className="relative max-w-xl mx-auto">
           {/* Navigation Arrows */}
           <button
             onClick={prevAlbum}
-            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-12 z-10 w-10 h-10 rounded-full bg-white shadow-md flex items-center justify-center text-sky-500 hover:bg-sky-50 transition-all"
+            className="absolute left-10 top-1/2 -translate-y-1/2 -translate-x-12 z-10 w-10 h-10 rounded-full bg-white shadow-md flex items-center justify-center text-sky-500 hover:bg-sky-50 transition-all"
+            aria-label="Previous Album"
           >
             <ChevronLeft className="w-6 h-6" />
           </button>
-
           <button
             onClick={nextAlbum}
-            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-12 z-10 w-10 h-10 rounded-full bg-white shadow-md flex items-center justify-center text-sky-500 hover:bg-sky-50 transition-all"
+            className="absolute right-10 top-1/2 -translate-y-1/2 translate-x-12 z-10 w-10 h-10 rounded-full bg-white shadow-md flex items-center justify-center text-sky-500 hover:bg-sky-50 transition-all"
+            aria-label="Next Album"
           >
             <ChevronRight className="w-6 h-6" />
           </button>
 
           {/* Album Content */}
           <div className="overflow-hidden">
-            <motion.div
-              key={currentAlbumIndex}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.5 }}
-              className="text-center"
-            >
-              <h3 className="text-2xl font-serif text-sky-600 mb-6">
-                {albums[currentAlbumIndex].title}
-              </h3>
-
-              {/* 4 Grid Photo Layout */}
-              <div className="grid grid-cols-2 gap-0">
-                {albums[currentAlbumIndex].photos.slice(0, 4).map((photo, index) => (
-                  <motion.div
-                    key={index}
-                    whileHover={{ scale: 1.03 }}
-                    onClick={() => setSelectedPhoto(photo)}
-                    className="aspect-square overflow-hidden shadow-md relative group cursor-pointer"
-                  >
-                    <img
-                      src={photo}
-                      alt={`Prewedding photo ${index + 1}`}
-                      className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-                  </motion.div>
-                ))}
-              </div>
-            </motion.div>
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={currentAlbumIndex}
+                initial={{ opacity: 0, x: 50 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: -50 }}
+                transition={{ duration: 0.5 }}
+                className="text-center"
+              >
+                <div className="grid grid-cols-2 ">
+                  {albums[currentAlbumIndex].photos.slice(0, 4).map((photo, index) => (
+                    <motion.div
+                      key={index}
+                      whileHover={{ scale: 1.03 }}
+                      onClick={() => setSelectedPhoto(photo.src)}
+                      className="aspect-square overflow-hidden shadow-md relative group cursor-pointer"
+                    >
+                      <img
+                        src={photo.thumbnail}
+                        srcSet={`${photo.thumbnail} 300w, ${photo.src} 1200w`}
+                        sizes="(max-width: 640px) 300px, 1200px"
+                        alt={`Prewedding photo ${index + 1}`}
+                        className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                        loading="lazy"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                    </motion.div>
+                  ))}
+                </div>
+              </motion.div>
+            </AnimatePresence>
           </div>
 
-          {selectedPhoto && (
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              className="fixed inset-0 bg-black/80 backdrop-blur-sm flex items-center justify-center z-50"
-              onClick={() => setSelectedPhoto(null)}
-            >
-              <motion.img
-                src={selectedPhoto}
-                initial={{ scale: 0.8 }}
-                animate={{ scale: 1 }}
-                exit={{ scale: 0.8 }}
-                transition={{ type: 'spring', stiffness: 200, damping: 20 }}
-                className="max-w-3xl w-full max-h-[90vh] object-contain rounded-lg shadow-xl"
-              // onClick={(e) => e.stopPropagation()} // biar klik di gambar gak close
-              />
-            </motion.div>
-          )}
+          {/* Modal for Full-Screen Image */}
+          <AnimatePresence>
+            {selectedPhoto && (
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                className="fixed inset-0 bg-black/80 backdrop-blur-sm flex items-center justify-center z-50"
+                onClick={() => setSelectedPhoto(null)}
+              >
+                <motion.img
+                  src={selectedPhoto}
+                  initial={{ scale: 0.8 }}
+                  animate={{ scale: 1 }}
+                  exit={{ scale: 0.8 }}
+                  transition={{ type: 'spring', stiffness: 200, damping: 20 }}
+                  className="max-w-3xl w-full max-h-[90vh] object-contain rounded-lg shadow-xl"
+                  alt="Selected photo"
+                  onClick={(e) => e.stopPropagation()} // Prevent closing when clicking the image
+                />
+              </motion.div>
+            )}
+          </AnimatePresence>
 
           {/* Album Indicators */}
           <div className="flex justify-center mt-8 space-x-2">
@@ -201,11 +204,11 @@ export default function Gallery() {
                   setTimeout(() => setIsAutoPlaying(true), 10000);
                 }}
                 className={`w-3 h-3 rounded-full transition-all ${currentAlbumIndex === index ? 'bg-sky-500 w-6' : 'bg-sky-200'}`}
+                aria-label={`Go to album ${index + 1}`}
               />
             ))}
           </div>
         </div>
-
       </div>
     </section>
   );
