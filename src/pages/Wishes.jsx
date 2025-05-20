@@ -113,7 +113,7 @@ export default function Wishes() {
             <div className="absolute top-0 right-0 w-96 h-96 bg-sky-100/20 rounded-full blur-3xl translate-x-1/2 -translate-y-1/2" />
             <div className="absolute bottom-0 left-0 w-96 h-96 bg-sky-100/20 rounded-full blur-3xl -translate-x-1/2 translate-y-1/2" />
 
-            <div className="container mx-auto px-4 py-20 relative z-10">
+            <div className="container mx-auto px-4 py-10 relative z-10">
                 {/* Section Header */}
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
@@ -242,65 +242,7 @@ export default function Wishes() {
                                         onChange={(e) => setName(e.target.value)}
                                     />
                                 </div>
-                                <motion.div
-                                    initial={{ opacity: 0, y: 20 }}
-                                    animate={{ opacity: 1, y: 0 }}
-                                    transition={{ delay: 0.1 }}
-                                    className="space-y-2 relative"
-                                >
-                                    <div className="flex items-center space-x-2 text-gray-500 text-sm mb-1">
-                                        <Calendar className="w-4 h-4" />
-                                        <span>Apakah kamu hadir?</span>
-                                    </div>
 
-                                    {/* Custom Select Button */}
-                                    <button
-                                        type="button"
-                                        onClick={() => setIsOpen(!isOpen)}
-                                        className="w-full px-4 py-2.5 rounded-xl bg-white/50 border border-sky-100 focus:border-sky-300 focus:ring focus:ring-sky-200 focus:ring-opacity-50 transition-all duration-200 text-left flex items-center justify-between"
-                                    >
-                                        <span className={attendance ? 'text-gray-700' : 'text-gray-400'}>
-                                            {attendance ?
-                                                options.find(opt => opt.value === attendance)?.label
-                                                : 'Pilih kehadiran...'}
-                                        </span>
-                                        <ChevronDown
-                                            className={`w-5 h-5 text-gray-400 transition-transform duration-200 ${isOpen ? 'transform rotate-180' : ''
-                                                }`}
-                                        />
-                                    </button>
-
-                                    {/* Dropdown Options */}
-                                    <AnimatePresence>
-                                        {isOpen && (
-                                            <motion.div
-                                                initial={{ opacity: 0, y: -10 }}
-                                                animate={{ opacity: 1, y: 0 }}
-                                                exit={{ opacity: 0, y: -10 }}
-                                                className="absolute z-10 w-full mt-1 bg-white rounded-xl shadow-lg border border-sky-100 overflow-hidden"
-                                            >
-                                                {options.map((option) => (
-                                                    <motion.button
-                                                        key={option.value}
-                                                        type="button"
-                                                        onClick={() => {
-                                                            setAttendance(option.value);
-                                                            setIsOpen(false);
-                                                        }}
-                                                        whileHover={{ backgroundColor: 'rgb(255, 241, 242)' }}
-                                                        className={`w-full px-4 py-2.5 text-left transition-colors
-                                        ${attendance === option.value
-                                                            ? 'bg-sky-50 text-sky-600'
-                                                            : 'text-gray-700 hover:bg-sky-50'
-                                                            }`}
-                                                    >
-                                                        {option.label}
-                                                    </motion.button>
-                                                ))}
-                                            </motion.div>
-                                        )}
-                                    </AnimatePresence>
-                                </motion.div>
                                 {/* Wish Textarea */}
                                 <div className="space-y-2">
                                     <div className="flex items-center space-x-2 text-gray-500 text-sm mb-1">
@@ -336,7 +278,6 @@ export default function Wishes() {
                         </div>
                     </form>
                 </motion.div>
-
 
             </div>
         </section>

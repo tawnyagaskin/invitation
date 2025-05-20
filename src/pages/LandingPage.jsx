@@ -7,7 +7,7 @@ import { Calendar, Clock } from 'lucide-react';
 import { useEffect, useState } from 'react';
 
 const LandingPage = ({ onOpenInvitation }) => {
-  const [guestName, setGuestName] = useState('');
+  const [guestName, setGuestName] = useState(null);
   
   useEffect(() => {
       // Get guest parameter from URL
@@ -20,7 +20,7 @@ const LandingPage = ({ onOpenInvitation }) => {
               setGuestName(decodedName);
           } catch (error) {
               console.error('Error decoding guest name:', error);
-              setGuestName('');
+            setGuestName(null);
           }
       }
   }, []);
@@ -113,7 +113,7 @@ const LandingPage = ({ onOpenInvitation }) => {
           </motion.div>
 
           {/* Open Invitation Button */}
-          <motion.div
+            {guestName !== null && <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.7 }}
@@ -136,7 +136,7 @@ const LandingPage = ({ onOpenInvitation }) => {
               </span>
                 <div className="absolute inset-0 bg-gradient-to-r from-sky-600 to-sky-500 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
             </motion.button>
-          </motion.div>
+            </motion.div>}
         </div>
       </motion.div>
     </div>

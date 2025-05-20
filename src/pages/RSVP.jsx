@@ -1,16 +1,32 @@
 import config from '@/config/config';
+import { safeBase64 } from '@/lib/base64';
 import { supabase } from '@/lib/supabase';
 import { AnimatePresence, motion } from 'framer-motion';
 import {
     Calendar,
     CheckCircle,
     ChevronDown,
+    Heart,
     Send,
     User
 } from 'lucide-react';
 import { useState } from 'react';
 
+const paxOpts = [
+    { value: '1', label: '1 Orang' },
+];
+
+const paxOpts2 = [
+    { value: '1', label: '1 Orang' },
+    { value: '2', label: '2 Orang' },
+];
+
+
 export default function RSVP() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const decodeAp = urlParams.get('ap');
+    const attendancePerson = safeBase64.decode(decodeAp);
+
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [attendance, setAttendance] = useState('');
     const [pax, setPax] = useState('1'); // Default ke 1 pax
@@ -18,17 +34,14 @@ export default function RSVP() {
     const [isPaxOpen, setIsPaxOpen] = useState(false);
     const [name, setName] = useState('');
     const [showSuccessModal, setShowSuccessModal] = useState(false);
+    const [paxOptions] = useState(attendancePerson === '2' ? paxOpts2 : paxOpts);
 
     const attendanceOptions = [
         { value: 'attending', label: 'Ya, Saya akan datang', bool: true },
         { value: 'not-attending', label: 'Tidak, Saya tidak bisa datang', bool: false },
     ];
 
-    const paxOptions = [
-        { value: '1', label: '1 Orang' },
-        { value: '2', label: '2 Orang' },
-        { value: '3', label: '3 Orang' },
-    ];
+
 
     const handleSubmitRSVP = async (e) => {
         e.preventDefault();
@@ -70,7 +83,7 @@ export default function RSVP() {
             <div className="absolute top-0 right-0 w-96 h-96 bg-sky-100/20 rounded-full blur-3xl translate-x-1/2 -translate-y-1/2" />
             <div className="absolute bottom-0 left-0 w-96 h-96 bg-sky-100/20 rounded-full blur-3xl -translate-x-1/2 translate-y-1/2" />
 
-            <div className="container mx-auto px-4 py-20 relative z-10">
+            <div className="container mx-auto px-4 pt-20 pb-10 relative z-10">
                 {/* Section Header */}
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
@@ -294,38 +307,18 @@ export default function RSVP() {
                     )}
                 </AnimatePresence>
 
+                {/* Decorative Divider */}
                 <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.5 }}
-                    className="max-w-2xl mx-auto mt-12"
+                    initial={{ scale: 0 }}
+                    whileInView={{ scale: 1 }}
+                    transition={{ delay: 0.4 }}
+                    className="flex items-center justify-center gap-4 pt-14"
                 >
-                    <motion.div
-                        initial={{ scale: 0 }}
-                        whileInView={{ scale: 1 }}
-                        transition={{ delay: 0.6 }}
-                        className="flex items-center justify-center gap-3 pt-4"
-                    >
-                        <div className="w-8 h-px bg-sky-200/50" />
-                        <div className="w-1.5 h-1.5 rounded-full bg-sky-300" />
-                        <div className="w-8 h-px bg-sky-200/50" />
-                    </motion.div>
-                    <motion.p
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.4 }}
-                        className="text-gray-500 max-w-md mx-auto py-10 text-center"
-                    >
-                        Atas kehadiran saudara/(i) & Do'a restunya, <br /> Kami mengucapkan Terima kasih
-                    </motion.p>
-                    <motion.h2
-                        initial={{ scale: 0.8, opacity: 0 }}
-                        animate={{ scale: 1, opacity: 1 }}
-                        transition={{ delay: 0.6 }}
-                        className="text-xl italic text-center font-serif bg-clip-text text-transparent bg-gradient-to-r from-sky-600 to-pink-600"
-                    >
-                        {config.couple.groomName} & {config.couple.brideName}
-                    </motion.h2>
+                    <div className="h-[1px] w-12 bg-sky-200" />
+                    <div className="w-5 h-5 text-sky-400">
+                        <Heart size={14} />
+                    </div>
+                    <div className="h-[1px] w-12 bg-sky-200" />
                 </motion.div>
             </div>
         </section>
