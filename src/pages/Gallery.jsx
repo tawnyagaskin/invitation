@@ -34,6 +34,16 @@ const albums = [
       { src: "/images/galeri3-4.jpg", thumbnail: "/images/galeri3-4.jpg" },
     ],
   },
+  {
+    id: 4,
+    title: "",
+    photos: [
+      { src: "/images/Lamaran1.jpeg", thumbnail: "/images/Lamaran1.jpeg" },
+      { src: "/images/lamaran5.jpeg", thumbnail: "/images/lamaran5.jpeg" },
+      { src: "/images/Lamaran3.jpeg", thumbnail: "/images/Lamaran3.jpeg" },
+      { src: "/images/Lamaran4.jpg", thumbnail: "/images/Lamaran4.jpg" },
+    ],
+  },
 ];
 
 export default function Gallery() {
