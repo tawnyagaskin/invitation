@@ -25,13 +25,13 @@ const BottomBar = () => {
 
   return (
     <motion.div
-      className="fixed bottom-4 transform -translate-x-1/2 z-50 w-full px-4 max-w-[430px]"
+      className="fixed bottom-4 right-4 z-50"
       initial={{ y: 100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.5, type: "spring", stiffness: 100 }}
     >
       <div className="backdrop-blur-md bg-white/90 border border-gray-200/80 rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.07)] px-4 py-2">
-        <nav className="flex justify-between items-center">
+        <nav className="flex flex-col items-center gap-2">
           {menuItems.map((item) => (
             <motion.a
               key={item.label}

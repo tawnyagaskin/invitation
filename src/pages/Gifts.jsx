@@ -1,6 +1,6 @@
 import config from "@/config/config";
 import { motion } from "framer-motion";
-import { Copy, Gift, CheckCircle, Wallet } from "lucide-react";
+import { Copy, Gift, CheckCircle, Wallet, Heart, GiftIcon } from "lucide-react";
 import { useState } from "react";
 
 export default function Gifts() {
@@ -16,38 +16,69 @@ export default function Gifts() {
   return (
     <>
       {/* Header + Tombol selalu tampil */}
-      <section id="gifts"><div className="py-20 text-center">
-        <motion.span
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.2 }}
-          className="inline-block font-medium text-sky-500 text-4xl"
-        >
-          Kado
-        </motion.span>
+      <section id="gifts">
+        <div className="py-20 text-center">
 
-        <motion.h2
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.3 }}
-          className="font-serif text-sm text-gray-500 mt-4 px-4"
-        >
-          Kehadiran dan doa restu merupakan karunia yang sangat berarti bagi kami. Namun, jika ingin berbagi kebahagiaan melalui tanda kasih, berikut detailnya
-        </motion.h2>
-
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.4 }}
-        >
-          <button
-            onClick={() => setShowDetails(!showDetails)}
-            className="px-6 py-2 mt-6 text-white bg-sky-500 rounded-full hover:bg-sky-600 transition"
+          {/* Decorative Elements */}
+          <motion.div
+            initial={{ scale: 0, rotate: -45 }}
+            whileInView={{ scale: 1, rotate: 0 }}
+            transition={{ delay: 0.7, duration: 1.5, type: "spring" }}
+            className="flex items-center justify-center gap-6 mb-8"
           >
-            {showDetails ? "Tutup" : "Klik di sini"}
-          </button>
-        </motion.div>
-      </div></section>
+            <div className="h-px w-16 bg-gradient-to-r from-sky-200 to-pink-200" />
+            <Gift className="w-6 h-6 text-pink-400" />
+            <div className="h-px w-16 bg-gradient-to-r from-pink-200 to-sky-200" />
+          </motion.div>
+
+          <motion.svg
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.5, duration: 1 }}
+            viewBox="0 0 500 120"
+            className="w-full h-28"
+          >
+            <defs>
+              <path
+                id="curve"
+                d="M 100,100 A 150,60 0 0,1 400,100"
+                fill="transparent"
+              />
+            </defs>
+            <text
+              fontSize="28"
+              fontFamily="serif"
+              fill="#0EA5E9"
+              className="italic font-light"
+            >
+              <textPath href="#curve" startOffset="50%" textAnchor="middle">
+                Gifts
+              </textPath>
+            </text>
+          </motion.svg>
+
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3 }}
+            className="font-serif text-sm text-gray-500 mt-4 px-4"
+          >
+            Kehadiran dan doa restu merupakan karunia yang sangat berarti bagi kami. Namun, jika ingin berbagi kebahagiaan melalui tanda kasih, berikut detailnya
+          </motion.h2>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.4 }}
+          >
+            <button
+              onClick={() => setShowDetails(!showDetails)}
+              className="px-4 py-2 mt-6 text-sky-600 border-sky-500 ring-1 text-xs rounded-full hover:bg-sky-400 hover:text-white transition"
+            >
+              {showDetails ? "Tutup" : "Klik di sini"}
+            </button>
+          </motion.div>
+        </div></section>
 
 
       {/* Konten detail ditampilkan hanya jika showDetails true */}

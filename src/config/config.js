@@ -22,13 +22,13 @@ const config = {
   // Event Details
   event: {
     date: "2025-08-10",
-    time: "08:00",
+    time: "09:00",
     timezone: "WIB",
     dateTime: "2025-08-10T00:00:00Z", // ISO 8601 format
     name: "Lelados Coffee & Space",
     address: "Jl. Kasatriyan, Gn. Gempal, Giri Peni, Kec. Wates, Kulon Progo",
     gift_address: "Jl. Bojong Sari 1 Blok D8 No.12, RT.002/RW.012. Taman Narogong Indah, Bojong Rawalumbu, Kec. Rawalumbu, Kota Bekasi, Jawa Barat 17116",
-    time: "08:00 - 12:00 WIB",
+    time: "09:00 - 12:00 WIB",
     phone: "+62 877 8665 3726",
     maps_url: "https://maps.app.goo.gl/28XyJo3maAuy7SAC9",
     maps_embed:
@@ -41,7 +41,7 @@ const config = {
     {
       title: "Akad Nikah - Rizki & Sekar",
       date: "2025-08-10",
-      startTime: "08:00",
+      startTime: "09:00",
       endTime: "10:00",
       timeZone: "Asia/Jakarta",
       location: "Lelados Coffee & Space",
@@ -51,7 +51,7 @@ const config = {
       title: "Resepsi Nikah - Rizki & Sekar",
       date: "2025-08-10",
       startTime: "10:00",
-      endTime: "12:00",
+      endTime: "13:00",
       timeZone: "Asia/Jakarta",
       location: "Lelados Coffee & Space",
       description: "We invite you to join us in celebrating our wedding ceremony.",

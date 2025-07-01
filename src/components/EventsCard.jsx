@@ -61,10 +61,10 @@ const SingleEventCard = ({ eventData }) => {
       console.error("Date or time missing!", eventData);
       return "#"; // fallback link atau jangan buka apa-apa
     }
-  
+
     const startDate = new Date(`${eventData.date}T${eventData.startTime}:00+07:00`);
     const endDate = new Date(`${eventData.date}T${eventData.endTime}:00+07:00`);
-  
+
     const formatDate = (date) => {
       if (isNaN(date)) {
         console.error("Invalid date detected:", date);
@@ -117,36 +117,50 @@ END:VCALENDAR`;
   return (
     <div className="relative">
       <motion.div
-        className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 space-y-4"
+        className=" p-6 space-y-4"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
       >
-        <div className="flex justify-between items-center">
-          <h3 className="text-xl font-semibold text-gray-800">{eventData.title.split(' - ')[0]}</h3>
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="text-sky-500 hover:text-sky-600 transition-colors"
-            onClick={() => setShowCalendarModal(true)}
-          >
-            <CalendarPlus className="w-5 h-5" />
-          </motion.button>
+        <div className="flex justify-evenly items-center">
+          <div className="relative inline-block w-full text-center">
+            <span className="absolute top-[8px] left-1/3 text-3xl font-[NewYork] text-gray-700 opacity-10 select-none pointer-events-none">
+              {eventData.title.split(' - ')[0]}
+            </span>
+            <span className="relative text-3xl text-sky-700 font-[NewYork] ">
+              {eventData.title.split(' - ')[0]}
+            </span>
+          </div>
+
         </div>
-        <div className="space-y-3 text-gray-600">
-          <div className="flex items-center space-x-3">
-            <Calendar className="w-5 h-5 text-sky-500" />
+        {/* <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="text-sky-500 hover:text-sky-600 transition-colors pl-6"
+              onClick={() => setShowCalendarModal(true)}
+            >
+              <div className='w-2 h-2' />
+              <CalendarPlus className="w-5 h-5" />
+            </motion.button> */}
+
+        <div className="space-y-3 text-gray-600 text-center italic">
+          <div className="flex items-center justify-center space-x-3">
             <span>{formatDate(eventData.date)}</span>
           </div>
-          <div className="flex items-center space-x-3">
-            <Clock className="w-5 h-5 text-sky-500" />
-            <span>{eventData.startTime} - {eventData.endTime} WIB</span>
+          <div className="flex items-center justify-center space-x-3">
+            <span>Pukul: {eventData.startTime} - {eventData.endTime} WIB</span>
           </div>
-          <div className="flex items-center space-x-3">
+          <div className="flex items-center justify-center space-x-3 pt-6">
             <MapPin className="w-5 h-5 text-sky-500" />
+          </div>
+          <div className="flex items-center justify-center space-x-3">
+            <span className='text-sm'>Lokasi acara:</span>
+          </div>
+          <div className="flex items-center justify-center space-x-3">
             <span>{eventData.location}</span>
           </div>
         </div>
+
       </motion.div>
 
       <Modal
