@@ -290,7 +290,7 @@ export default function Hero() {
               initial={{ scale: 0.8, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               transition={{ delay: 1.1, duration: 1 }}
-              className="text-4xl italic text-left font-serif bg-clip-text text-transparent bg-gradient-to-r from-sky-600 to-pink-600 pt-12"
+              className="text-3xl italic text-left font-serif bg-clip-text text-transparent bg-gradient-to-r from-sky-600 to-pink-600 pt-12"
             >
               {config.couple.groomName_full}
             </motion.h2>
@@ -315,7 +315,7 @@ export default function Hero() {
               initial={{ scale: 0.8, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               transition={{ delay: 1.4, duration: 1 }}
-              className="text-4xl italic text-right font-serif bg-clip-text text-transparent leading-none bg-gradient-to-r from-sky-600 to-pink-600 pt-10"
+              className="text-3xl italic text-right font-serif bg-clip-text text-transparent leading-none bg-gradient-to-r from-sky-600 to-pink-600 pt-10"
             >
               {config.couple.brideName_full}
             </motion.h2>

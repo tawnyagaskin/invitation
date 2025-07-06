@@ -12,10 +12,10 @@ const config = {
 
   couple: {
     groomName: "Sekar",
-    groomName_full: "Sekar Septi Ardiyati",
+    groomName_full: "Sekar Septi Ardiyati S.Kom",
     groomName_parents: "Bapak Suparjo & Ibu Sri Riyadiyati",
     brideName: "Rizki",
-    brideName_full: "Rizki Nurpadilah",
+    brideName_full: "Rizki Nurpadilah S.Kom",
     brideName_parents: "Bapak Fathul Qorib & Ibu Nurhayati",
   },
 
