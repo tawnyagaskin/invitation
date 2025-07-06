@@ -89,6 +89,9 @@ const config = {
   supabase: {
     url: "https://rnckskkhqvxnipafwzfw.supabase.co",
     key: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJuY2tza2tocXZ4bmlwYWZ3emZ3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDQ2MDM5NDUsImV4cCI6MjA2MDE3OTk0NX0.8khGIPF81qUmNaJJHjFtN99rpzsqSHcii9DueT0tPsM"
+  },
+  link: {
+    train: "https://booking.kai.id/search?origination=KtdFBl1xjTOORiV8XxSdfw%3D%3D&destination=bsmX3DtqA9GnMnn3iqyPdQ%3D%3D&tanggal=VcUgRvy1KPqohAu%2ByTsKPCTbOEW68sfhrFgA%2BZZK%2FsA%3D&adult=gI55KLCZtUwvlSZfMKs5Wg%3D%3D&infant=N6HiGnWj%2BzrH%2BwounZCuxg%3D%3D&book_type="
   }
 };
 

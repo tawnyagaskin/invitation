@@ -82,10 +82,10 @@ export default function Hero() {
   return (
     <>
       <section
-        id="home" className="min-h-screen flex flex-col items-center justify-center py-20 text-center relative overflow-hidden bg-gradient-to-b from-white via-sky-50/20 to-[#D8B4FE]/10"
+        id="home" className="min-h-screen h-screen flex flex-col items-center justify-center py-20 text-center relative overflow-hidden bg-gradient-to-b from-white via-sky-50/20 to-[#D8B4FE]/10"
         style={{
           backgroundImage: `url(/images/galeri1-3.jpg)`,
-          backgroundSize: 'contain',
+          backgroundSize: 'cover',
           backgroundPosition: 'top center',
           backgroundRepeat: 'no-repeat'
         }}
@@ -214,7 +214,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: 1, duration: 1 }}
-            className="font-light italic text-base text-sky-600 max-w-lg mx-auto"
+            className="font-light italic text-base text-sky-600 max-w-lg mx-auto pt-36"
           >
             Count the Date
           </motion.p>

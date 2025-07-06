@@ -10,7 +10,7 @@ import {
     Send,
     User
 } from 'lucide-react';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 const paxOpts = [
     { value: '1', label: '1 Orang' },
@@ -26,13 +26,14 @@ export default function RSVP() {
     const urlParams = new URLSearchParams(window.location.search);
     const decodeAp = urlParams.get('ap');
     const attendancePerson = safeBase64.decode(decodeAp);
+    const guestParam = urlParams.get('guest');
 
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [attendance, setAttendance] = useState('');
-    const [pax, setPax] = useState('1'); // Default ke 1 pax
+    const [pax, setPax] = useState('1');
     const [isOpen, setIsOpen] = useState(false);
     const [isPaxOpen, setIsPaxOpen] = useState(false);
-    const [name, setName] = useState('');
+    const [name, setName] = useState(guestParam ? safeBase64.decode(guestParam) : '');
     const [showSuccessModal, setShowSuccessModal] = useState(false);
     const [paxOptions] = useState(attendancePerson === '2' ? paxOpts2 : paxOpts);
 
@@ -41,7 +42,17 @@ export default function RSVP() {
         { value: 'not-attending', label: 'Tidak, Saya tidak bisa datang', bool: false },
     ];
 
-
+    useEffect(() => {
+        if (guestParam) {
+            try {
+                const decodedName = safeBase64.decode(guestParam);
+                setName(decodedName);
+            } catch (error) {
+                console.error('Error decoding guest name:', error);
+                setName('');
+            }
+        }
+    }, [guestParam]);
 
     const handleSubmitRSVP = async (e) => {
         e.preventDefault();
@@ -77,13 +88,20 @@ export default function RSVP() {
     };
 
     return (
-        <section id="rsvp" className="min-h-screen relative overflow-hidden">
-            {/* Decorative Background */}
-            <div className="absolute inset-0 bg-gradient-to-b from-white via-sky-50/30 to-white" />
-            <div className="absolute top-0 right-0 w-96 h-96 bg-sky-100/20 rounded-full blur-3xl translate-x-1/2 -translate-y-1/2" />
-            <div className="absolute bottom-0 left-0 w-96 h-96 bg-sky-100/20 rounded-full blur-3xl -translate-x-1/2 translate-y-1/2" />
+        <section id="rsvp" className="min-h-screen relative overflow-hidden bg-gradient-to-b from-[#D8B4FE]/10 via-sky-50/20 to-white">
+            <div className="container mx-auto px-4 pt-10 pb-10 relative z-10">
 
-            <div className="container mx-auto px-4 pt-20 pb-10 relative z-10">
+                <motion.div
+                    initial={{ scale: 0 }}
+                    whileInView={{ scale: 1 }}
+                    transition={{ delay: 0.4 }}
+                    className="flex items-center justify-center gap-4 "
+                >
+                    <div className="h-[1px] w-12 bg-sky-200" />
+                    <Calendar className="w-5 h-5 text-sky-400" />
+                    <div className="h-[1px] w-12 bg-sky-200" />
+                </motion.div>
+
                 {/* Section Header */}
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
@@ -91,32 +109,40 @@ export default function RSVP() {
                     transition={{ duration: 0.8 }}
                     className="text-center space-y-4 mb-16"
                 >
-                    <motion.span
+                    {/* <motion.span
                         initial={{ opacity: 0, y: 10 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.2 }}
                         className="inline-block text-sky-500 font-medium"
                     >
                         Konfirmasi Kehadiran Kamu
-                    </motion.span>
-                    <motion.h2
+                    </motion.span> */}
+                    <motion.svg
                         initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.3 }}
-                        className="text-4xl md:text-5xl font-serif text-gray-800"
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 0.5, duration: 1 }}
+                        viewBox="0 0 500 100"
+                        className="w-full h-28 pt-10"
                     >
-                        RSVP
-                    </motion.h2>
-                    <motion.div
-                        initial={{ scale: 0 }}
-                        whileInView={{ scale: 1 }}
-                        transition={{ delay: 0.4 }}
-                        className="flex items-center justify-center gap-4 pt-4"
-                    >
-                        <div className="h-[1px] w-12 bg-sky-200" />
-                        <Calendar className="w-5 h-5 text-sky-400" />
-                        <div className="h-[1px] w-12 bg-sky-200" />
-                    </motion.div>
+                        <defs>
+                            <path
+                                id="curve"
+                                d="M 100,100 A 150,60 0 0,1 400,200"
+                                fill="transparent"
+                            />
+                        </defs>
+                        <text
+                            fontSize="28"
+                            fontFamily="serif"
+                            fill="#0EA5E9"
+                            className="italic font-light"
+                        >
+                            <textPath href="#curve" startOffset="50%" textAnchor="middle">
+                                RSVP
+                            </textPath>
+                        </text>
+                    </motion.svg>
+
                 </motion.div>
 
                 {/* RSVP Form */}
@@ -307,19 +333,6 @@ export default function RSVP() {
                     )}
                 </AnimatePresence>
 
-                {/* Decorative Divider */}
-                <motion.div
-                    initial={{ scale: 0 }}
-                    whileInView={{ scale: 1 }}
-                    transition={{ delay: 0.4 }}
-                    className="flex items-center justify-center gap-4 pt-14"
-                >
-                    <div className="h-[1px] w-12 bg-sky-200" />
-                    <div className="w-5 h-5 text-sky-400">
-                        <Heart size={14} />
-                    </div>
-                    <div className="h-[1px] w-12 bg-sky-200" />
-                </motion.div>
             </div>
         </section>
     );

@@ -90,22 +90,6 @@ export default function Gallery() {
           transition={{ duration: 0.8 }}
           className="text-center space-y-4 mb-16"
         >
-          <motion.span
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2 }}
-            className="inline-block text-sky-500 font-medium"
-          >
-            Kenangan Indah Kami
-          </motion.span>
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.3 }}
-            className="text-4xl md:text-5xl font-serif text-gray-800"
-          >
-            Galeri
-          </motion.h2>
           <motion.div
             initial={{ scale: 0 }}
             whileInView={{ scale: 1 }}
@@ -125,6 +109,35 @@ export default function Gallery() {
             <div className="h-[1px] w-12 bg-sky-200" />
           </motion.div>
         </motion.div>
+
+        <motion.svg
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.5, duration: 1 }}
+          viewBox="0 0 500 120"
+          className="w-full h-28"
+        >
+          <defs>
+            <path
+              id="curve"
+              d="M 100,100 A 150,60 0 0,1 400,100"
+              fill="transparent"
+            />
+          </defs>
+          <text
+            fontSize="28"
+            fontFamily="serif"
+            fill="#0EA5E9"
+            className="italic font-light"
+          >
+            <textPath href="#curve" startOffset="50%" textAnchor="middle">
+              Gallery
+            </textPath>
+          </text>
+        </motion.svg>
+
+
+
 
         {/* Album Carousel */}
         <div className="relative max-w-xl mx-auto">
