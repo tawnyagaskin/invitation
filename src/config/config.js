@@ -3,8 +3,8 @@
 const config = {
   // Meta Information
   meta: {
-    title: "Sekar & Rizki Wedding",
-    description: "We are getting married and would love for you to be a part of our celebration.",
+    title: "The Wedding of Sekar & Rizki #OurSeriezBegins",
+    description: "Pernikahan Sekar & Rizki. Yogyakarta, 10 Agustus 2025.",
     address: "Jl. Kasatriyan, Gn. Gempal, Giri Peni, Kec. Wates, Kulon Progo",
     ogImage: "/images/og-image.jpg", 
     favicon: "/images/favicon.ico",
